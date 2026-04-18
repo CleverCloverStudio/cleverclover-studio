@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroText from "@/components/HeroText";
+import NeedsSection from "@/components/NeedsSection";
 import ServiceCard from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
@@ -10,20 +11,31 @@ export default function Home() {
   return (
     <>
       {/* ─── Hero ─────────────────────────────────────────────── */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24">
-        {/* Radial warm glow at top-center */}
+      <section className="relative flex min-h-[80vh] items-center overflow-hidden pt-20 pb-10 md:pt-24 md:pb-12">
+        {/* Radial gold glow — left-biased toward the copy side */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.09) 0%, transparent 65%)",
+              "radial-gradient(ellipse 70% 60% at 20% 40%, rgba(201,168,76,0.08) 0%, transparent 60%)",
           }}
         />
-        {/* Subtle bottom vignette */}
+        {/* Cool glow on right — behind the showreel panel */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 55% at 80% 50%, rgba(56,189,248,0.04) 0%, transparent 65%)",
+          }}
+        />
+        {/* Bottom vignette into next section */}
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-dark to-transparent" />
 
         <HeroText />
       </section>
+
+      {/* ─── Animated Needs Section ───────────────────────────── */}
+      <NeedsSection />
 
       {/* ─── Services Overview ────────────────────────────────── */}
       <section id="services" className="bg-dark-100 py-24">

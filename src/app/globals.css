@@ -10,6 +10,16 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes reel-pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.75; }
+}
+
+@keyframes reel-scan {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100%); }
+}
+
 @theme {
   /* Brand colors */
   --color-gold: #C9A84C;
