@@ -1,0 +1,238 @@
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import type { WorkProject, WorkCategory } from "@/lib/data";
+
+const FILTERS: Array<"All" | WorkCategory> = [
+  "All",
+  "Video",
+  "Audio",
+  "Music",
+  "Web",
+];
+
+export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
+  const [activeFilter, setActiveFilter] = useState<"All" | WorkCategory>("All");
+  const [selectedProject, setSelectedProject] = useState<WorkProject | null>(null);
+
+  const filtered =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
+
+  return (
+    <>
+      {/* Filter bar */}
+      <div className="flex flex-wrap gap-2">
+        {FILTERS.map((f) => (
+          <button
+            key={f}
+            onClick={() => setActiveFilter(f)}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 ${
+              activeFilter === f
+                ? "bg-gold text-dark"
+                : "border border-white/10 bg-dark-200 text-muted-light hover:border-white/20 hover:text-cream"
+            }`}
+          >
+            {f}
+          </button>
+        ))}
+      </div>
+
+      {/* Project grid */}
+      <motion.div
+        layout
+        className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        <AnimatePresence mode="popLayout">
+          {filtered.map((project) => (
+            <motion.button
+              key={project.id}
+              layout
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              onClick={() => setSelectedProject(project)}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-dark-200 text-left transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl"
+            >
+              {/* Thumbnail */}
+              <div
+                className={`relative h-48 bg-gradient-to-br ${project.gradientFrom} ${project.gradientTo} overflow-hidden`}
+              >
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `radial-gradient(ellipse at 30% 40%, ${project.accentColor}, transparent 65%)`,
+                  }}
+                />
+                {/* Tags */}
+                <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/15 bg-dark/60 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-cream backdrop-blur-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {/* Hover overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="rounded-full border border-white/20 bg-dark/60 px-4 py-2 text-sm font-semibold text-cream backdrop-blur-sm">
+                    View case study
+                  </span>
+                </div>
+              </div>
+
+              {/* Card body */}
+              <div className="flex flex-col gap-1.5 p-5">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  {project.client}
+                </p>
+                <h3 className="font-display text-lg font-semibold text-cream">
+                  {project.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted">
+                  {project.description}
+                </p>
+              </div>
+            </motion.button>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+
+      {/* Case study modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
+              onClick={() => setSelectedProject(null)}
+            />
+
+            {/* Modal panel */}
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.97 }}
+              transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="fixed inset-x-4 bottom-0 top-8 z-50 mx-auto flex max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-white/10 bg-dark-200 md:inset-x-auto md:inset-y-8 md:rounded-2xl"
+            >
+              {/* Modal header / thumbnail */}
+              <div
+                className={`relative h-52 shrink-0 bg-gradient-to-br ${selectedProject.gradientFrom} ${selectedProject.gradientTo} overflow-hidden`}
+              >
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `radial-gradient(ellipse at 30% 50%, ${selectedProject.accentColor}, transparent 65%)`,
+                  }}
+                />
+                <div className="absolute bottom-4 left-6 flex flex-wrap gap-1.5">
+                  {selectedProject.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/15 bg-dark/60 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-cream backdrop-blur-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  aria-label="Close"
+                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-dark/50 text-cream backdrop-blur-sm transition-colors hover:bg-dark/70"
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Modal content */}
+              <div className="flex-1 overflow-y-auto p-6 md:p-8">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  {selectedProject.client}
+                </p>
+                <h2 className="mt-2 font-display text-2xl font-bold text-cream md:text-3xl">
+                  {selectedProject.title}
+                </h2>
+
+                <div className="mt-8 grid gap-6 md:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gold/70">
+                      The Challenge
+                    </p>
+                    <p className="text-sm leading-relaxed text-muted-light">
+                      {selectedProject.challenge}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gold/70">
+                      The Solution
+                    </p>
+                    <p className="text-sm leading-relaxed text-muted-light">
+                      {selectedProject.solution}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-col gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold/70">
+                    Deliverables
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.deliverables.map((d) => (
+                      <span
+                        key={d}
+                        className="rounded-full border border-white/10 bg-dark-300 px-3 py-1 text-xs font-medium text-muted-light"
+                      >
+                        {d}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {selectedProject.testimonial && (
+                  <div className="mt-8 rounded-xl border border-gold/15 bg-dark-300 p-5">
+                    <p className="text-sm italic leading-relaxed text-cream">
+                      "{selectedProject.testimonial}"
+                    </p>
+                    {selectedProject.testimonialAuthor && (
+                      <p className="mt-3 text-xs font-semibold text-gold">
+                        — {selectedProject.testimonialAuthor}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {selectedProject.externalUrl && (
+                  <div className="mt-6">
+                    <a
+                      href={selectedProject.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-dark-300 px-4 py-2 text-sm font-semibold text-cream transition-colors hover:border-white/25 hover:text-gold"
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-red-500" aria-hidden="true">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                      </svg>
+                      Watch on YouTube ↗
+                    </a>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

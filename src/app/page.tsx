@@ -1,65 +1,156 @@
-import Image from "next/image";
+import Link from "next/link";
+import HeroText from "@/components/HeroText";
+import ServiceCard from "@/components/ServiceCard";
+import SectionHeading from "@/components/SectionHeading";
+import CTASection from "@/components/CTASection";
+import AnimatedReveal from "@/components/AnimatedReveal";
+import { services, proofItems, featuredWork } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* ─── Hero ─────────────────────────────────────────────── */}
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24">
+        {/* Radial warm glow at top-center */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.09) 0%, transparent 65%)",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+        {/* Subtle bottom vignette */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-dark to-transparent" />
+
+        <HeroText />
+      </section>
+
+      {/* ─── Services Overview ────────────────────────────────── */}
+      <section id="services" className="bg-dark-100 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <AnimatedReveal>
+            <SectionHeading
+              label="What we make"
+              title="One studio. Every discipline."
+              subtitle="From the first concept to the final deliverable — video, audio, music, and web all built under one roof with one point of contact."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </AnimatedReveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+            {services.map((service, i) => (
+              <AnimatedReveal key={service.id} delay={i * 0.08}>
+                <ServiceCard {...service} index={i} />
+              </AnimatedReveal>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ─── Proof Strip ──────────────────────────────────────── */}
+      <section className="overflow-hidden border-y border-white/5 bg-dark py-7">
+        <div
+          className="flex gap-0 whitespace-nowrap"
+          style={{ animation: "marquee 40s linear infinite" }}
+        >
+          {/* Duplicate for seamless loop */}
+          {[...proofItems, ...proofItems].map((item, i) => (
+            <span key={i} className="flex items-center">
+              <span className="px-8 text-sm font-medium tracking-wide text-muted-light">
+                {item}
+              </span>
+              <span className="text-gold/40" aria-hidden="true">◆</span>
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── Featured Work ────────────────────────────────────── */}
+      <section className="bg-dark-100 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <AnimatedReveal>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <SectionHeading
+                label="Selected work"
+                title="The work speaks."
+              />
+              <Link
+                href="/work"
+                className="shrink-0 text-sm font-semibold text-gold transition-colors hover:text-gold-light"
+              >
+                View all projects →
+              </Link>
+            </div>
+          </AnimatedReveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {featuredWork.map((project, i) => (
+              <AnimatedReveal key={project.id} delay={i * 0.1}>
+                <Link
+                  href="/work"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-dark-200 transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl"
+                >
+                  {/* Thumbnail placeholder */}
+                  <div
+                    className={`relative h-52 bg-gradient-to-br ${project.gradientFrom} ${project.gradientTo} overflow-hidden`}
+                  >
+                    {/* Simulated image overlay */}
+                    <div
+                      className="absolute inset-0 opacity-60"
+                      style={{
+                        background: `radial-gradient(ellipse at 30% 40%, ${project.accentColor}, transparent 65%)`,
+                      }}
+                    />
+                    {/* Tags */}
+                    <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-white/15 bg-dark/60 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-cream backdrop-blur-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {/* Play icon for video projects */}
+                    {project.tags.includes("Video") && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold/40 group-hover:bg-dark/70">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" className="translate-x-0.5 text-cream">
+                            <path d="M2 1.5l10 5.5-10 5.5V1.5z" />
+                          </svg>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Card body */}
+                  <div className="flex flex-col gap-2 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                      {project.client}
+                    </p>
+                    <h3 className="font-display text-lg font-semibold text-cream">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-muted">
+                      {project.description}
+                    </p>
+                  </div>
+                </Link>
+              </AnimatedReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ──────────────────────────────────────────────── */}
+      <CTASection
+        heading="Let's build something together."
+        subtext="Tell us about your project and we'll get back to you within 24 hours. No pressure, no pitch — just a conversation."
+        buttonText="Book a project"
+        buttonHref="/book"
+        secondaryText="See our packages"
+        secondaryHref="/packages"
+      />
+    </>
   );
 }
