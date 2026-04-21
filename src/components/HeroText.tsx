@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const headline = "Music. Video. Websites. AI. One studio that makes it all hit.";
 const words = headline.split(" ");
@@ -109,94 +111,89 @@ export default function HeroText() {
   );
 }
 
-/**
- * Swap this component's inner content for a <video> element when the
- * showreel is ready:
- *
- *   <video
- *     autoPlay muted loop playsInline
- *     className="absolute inset-0 h-full w-full object-cover"
- *     src="/showreel.mp4"
- *   />
- */
 function ShowreelPanel() {
+  const [playing, setPlaying] = useState(false);
+
   return (
-    <div className="group relative aspect-video w-full overflow-hidden rounded-2xl border border-white/8 bg-dark-200 shadow-[0_0_80px_rgba(0,0,0,0.6)]">
-      {/* ── Cinematic gradient layers ── */}
-      {/* Base atmospheric glow — warm left, cool right */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `
-            radial-gradient(ellipse 70% 80% at 20% 60%, rgba(201,168,76,0.10) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 70% at 80% 30%, rgba(56,189,248,0.06) 0%, transparent 55%),
-            radial-gradient(ellipse 50% 60% at 50% 100%, rgba(52,211,153,0.05) 0%, transparent 50%)
-          `,
-        }}
-      />
-
-      {/* Subtle horizontal scan line — suggests motion */}
-      <div
-        className="pointer-events-none absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent"
-        style={{ animation: "reel-scan 6s linear infinite", top: "40%" }}
-      />
-
-      {/* Vignette around edges */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 90% 90% at 50% 50%, transparent 40%, rgba(0,0,0,0.65) 100%)",
-        }}
-      />
-
-      {/* ── Center play button ── */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <motion.div
-          animate={{ opacity: [0.5, 0.85, 0.5] }}
-          transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-          className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold/50 group-hover:bg-dark/70"
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="currentColor"
-            className="translate-x-0.5 text-cream"
-          >
-            <path d="M3 2l13 7-13 7V2z" />
-          </svg>
-        </motion.div>
-      </div>
-
-      {/* ── Bottom labels ── */}
-      <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-4">
-        {/* Showreel label */}
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
-            Showreel
-          </span>
-        </div>
-
-        {/* "Coming soon" pill */}
-        <span className="rounded-full border border-white/10 bg-dark/60 px-2.5 py-1 text-xs font-medium text-white/30 backdrop-blur-sm">
-          Video coming soon
-        </span>
-      </div>
-
-      {/* ── Top-left corner accent ── */}
-      <div className="absolute left-4 top-4 flex items-center gap-1.5">
-        <span
-          className="h-1.5 w-1.5 rounded-full bg-gold/40"
-          style={{ animation: "reel-pulse 2.5s ease-in-out infinite" }}
+    <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/8 bg-dark-200 shadow-[0_0_80px_rgba(0,0,0,0.6)]">
+      {playing ? (
+        /* ── YouTube embed (autoplay on click) ── */
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src="https://www.youtube.com/embed/guW5thVfskg?autoplay=1&rel=0&modestbranding=1&color=white"
+          title="Clever Clover Studio Showreel"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
         />
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-white/25">
-          CC Studio
-        </span>
-      </div>
+      ) : (
+        /* ── Thumbnail + play button ── */
+        <button
+          onClick={() => setPlaying(true)}
+          aria-label="Play showreel"
+          className="group absolute inset-0 w-full"
+        >
+          {/* Thumbnail */}
+          <Image
+            src="/images/showreel-thumbnail.png"
+            alt="Clever Clover Studio showreel thumbnail"
+            fill
+            className="object-cover"
+            priority
+          />
 
-      {/* ── Right-edge gold accent line ── */}
-      <div className="absolute bottom-8 right-0 top-8 w-px bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
+          {/* Dark vignette over thumbnail */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 90% 90% at 50% 50%, transparent 35%, rgba(0,0,0,0.55) 100%)",
+            }}
+          />
+
+          {/* Play button */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              animate={{ opacity: [0.75, 1, 0.75] }}
+              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+              className="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-dark/60 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold/60 group-hover:bg-dark/80"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="currentColor"
+                className="translate-x-0.5 text-cream"
+              >
+                <path d="M3 2l13 7-13 7V2z" />
+              </svg>
+            </motion.div>
+          </div>
+
+          {/* Top-left corner accent */}
+          <div className="absolute left-4 top-4 flex items-center gap-1.5">
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-gold/50"
+              style={{ animation: "reel-pulse 2.5s ease-in-out infinite" }}
+            />
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-white/40">
+              CC Studio
+            </span>
+          </div>
+
+          {/* Bottom label */}
+          <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-4">
+            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">
+              Showreel
+            </span>
+            <span className="rounded-full border border-white/15 bg-dark/60 px-2.5 py-1 text-xs font-medium text-white/40 backdrop-blur-sm">
+              Watch on YouTube
+            </span>
+          </div>
+
+          {/* Right-edge gold accent line */}
+          <div className="absolute bottom-8 right-0 top-8 w-px bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
+        </button>
+      )}
     </div>
   );
 }
