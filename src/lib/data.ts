@@ -497,6 +497,7 @@ export interface WorkProject {
   accentColor?: string;
   youtubeId?: string;
   spotifyEpisodeId?: string;
+  spotifyShowId?: string;
   challenge: string;
   solution: string;
   deliverables: string[];
@@ -589,6 +590,20 @@ export const workProjects: WorkProject[] = [
     challenge: "Create a fully produced narrative fiction podcast — with multiple voice characters, original music, and layered sound design — entirely solo, with no cast or production team.",
     solution: "Wrote all scripts, performed every character voice, composed original music and sound design, and produced all 6 episodes in-house. Built a signature format: science fiction told with the tension and structure of true crime.",
     deliverables: ["6 original episodes written + produced", "Multiple character voice performances", "Original music per episode", "Full sound design", "Distributed on Spotify"],
+  },
+  {
+    id: 9,
+    title: "Clever Clover Podcast — Daily Tech & AI News",
+    client: "Clever Clover Studio",
+    category: "Audio",
+    tags: ["Audio", "Music", "Content Creation"],
+    description:
+      "A daily tech and AI news podcast featuring multiple original characters — all voiced, written, and produced by one person. Two hosts debate, interrupt, and correct each other across topics in tech, AI, and culture. All voice performances, writing, editing, music, and sound design produced entirely in-house. 6 episodes produced.",
+    spotifyShowId: "55jTLjzEIULDjwkeYwYiJc",
+    externalUrl: "https://open.spotify.com/show/55jTLjzEIULDjwkeYwYiJc",
+    challenge: "Build a multi-character daily podcast with distinct, believable host personalities — without a co-host, writing team, or production budget.",
+    solution: "Wrote all content, performed every character voice, produced original music and sound design, and released 6 episodes entirely in-house — building a full cast from one person.",
+    deliverables: ["6 episodes written + produced", "Multiple original character voices", "Original music and sound design", "Distributed on Spotify"],
   },
   {
     id: 7,
