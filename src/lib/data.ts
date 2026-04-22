@@ -183,42 +183,63 @@ export const customSongPricing = [
   { title: "Add a lyric video to any song", price: "+ $300 – $600" },
 ];
 
-export const artists = [
+export interface Artist {
+  id: string;
+  name: string;
+  tagline: string;
+  genre: string;
+  vibe: string;
+  gradientFrom: string;
+  gradientAccent: string;
+  spotifyArtistUrl: string;
+  spotifyTrackId: string;
+  appleMusicUrl: string;
+  youtubeMusicUrl: string;
+  beatportUrl: string;
+}
+
+export const artists: Artist[] = [
   {
     id: "clover",
     name: "CLOVER",
-    genre: "Alternative R&B / Soul",
-    description:
-      "Smooth, introspective, and emotionally layered. CLOVER builds soundscapes that pull you in and don't let go.",
+    tagline: "The Everything Bagel Producer",
+    genre: "Club/Dance · Progressive House · Country · Rap/Hip-Hop",
+    vibe: "Can't stay in one lane. Every genre. Every mood.",
     gradientFrom: "from-emerald-950",
-    gradientAccent: "rgba(52,211,153,0.15)",
-    spotifyUrl: "#",
-    appleMusicUrl: "#",
-    youtubeUrl: "#",
+    gradientAccent: "rgba(52,211,153,0.18)",
+    spotifyArtistUrl: "https://open.spotify.com/artist/6MFKPgbFJDAR91KAx8wxuq",
+    spotifyTrackId: "7eSwC6T4MveQAGRSByxn9A",
+    appleMusicUrl: "https://music.apple.com/us/artist/clover/1826916732",
+    youtubeMusicUrl: "https://music.youtube.com/channel/UCVFAoNWt_uPkrGqkbK0HNQw",
+    beatportUrl: "https://www.beatport.com/artist/clover/460705",
   },
   {
     id: "aubrey",
     name: "Aubrey Hightower",
-    genre: "Indie Pop / Singer-Songwriter",
-    description:
-      "Warm vocals, honest lyrics, and melodies that linger long after the song ends.",
+    tagline: "The Voice of Emotion",
+    genre: "Pop · EDM · Singer/Songwriter",
+    vibe: "Big heart, bold presence.",
     gradientFrom: "from-rose-950",
-    gradientAccent: "rgba(251,113,133,0.15)",
-    spotifyUrl: "#",
-    appleMusicUrl: "#",
-    youtubeUrl: "#",
+    gradientAccent: "rgba(251,113,133,0.18)",
+    spotifyArtistUrl: "https://open.spotify.com/artist/02YzdFz3dg4tf9uxM5G8TN",
+    spotifyTrackId: "4qx9thqWJPyJXREpkwHxYy",
+    appleMusicUrl: "https://music.apple.com/us/artist/aubrey-hightower/1826040982",
+    youtubeMusicUrl: "https://music.youtube.com/channel/UCjAkjDNsaqIwxslw96iYlCg",
+    beatportUrl: "https://www.beatport.com/artist/aubrey-hightower/2345564",
   },
   {
     id: "trashcat",
     name: "TrashCat",
-    genre: "Hyperpop / Experimental",
-    description:
-      "Chaotic, fun, and unapologetically weird. TrashCat is the project that breaks all the rules on purpose.",
+    tagline: "Unhinged. Wildcard Energy. Got Memes…?",
+    genre: "EDM · Tech-House · Dubstep · G-House · Hip-Hop",
+    vibe: "Unhinged. Wildcard energy. Got memes…?",
     gradientFrom: "from-violet-950",
-    gradientAccent: "rgba(167,139,250,0.15)",
-    spotifyUrl: "#",
-    appleMusicUrl: "#",
-    youtubeUrl: "#",
+    gradientAccent: "rgba(167,139,250,0.18)",
+    spotifyArtistUrl: "https://open.spotify.com/artist/7fAlkYj8HVShNDITziAoso",
+    spotifyTrackId: "0WfOSiDxnX2ilZzEhgFut0",
+    appleMusicUrl: "https://music.apple.com/us/artist/trashcat/1863558303",
+    youtubeMusicUrl: "https://music.youtube.com/channel/UCgp6tWjBdeyyySvk0Kv7igQ",
+    beatportUrl: "https://www.beatport.com/artist/trashcat/703347",
   },
 ];
 
