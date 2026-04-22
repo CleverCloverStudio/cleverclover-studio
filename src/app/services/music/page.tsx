@@ -39,7 +39,14 @@ export default function MusicPage() {
             </div>
           </AnimatedReveal>
 
-          <AnimatedReveal delay={0.1} className="mt-12">
+          <AnimatedReveal delay={0.08} className="mt-10">
+            <p className="text-base font-medium text-muted-light">
+              Choose your voice. Choose your genre. Delivered in{" "}
+              <span className="font-semibold text-gold">48 hours.</span>
+            </p>
+          </AnimatedReveal>
+
+          <AnimatedReveal delay={0.1} className="mt-6">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {customSongPricing.map((item) => (
                 <div
@@ -47,10 +54,10 @@ export default function MusicPage() {
                   className="flex flex-col gap-3 rounded-xl border border-white/8 bg-dark-200 p-6 transition-all duration-300 hover:border-gold/20 hover:bg-dark-300"
                 >
                   <p className="text-sm font-semibold text-cream">{item.title}</p>
+                  <p className="text-[11px] leading-relaxed text-muted">
+                    Voice &amp; genre of your choice · 48-hour delivery
+                  </p>
                   <div className="mt-auto pt-2">
-                    <span className="block text-[10px] font-semibold uppercase tracking-widest text-gold/60">
-                      starting at
-                    </span>
                     <span className="font-display text-xl font-medium text-gold">
                       {item.price}
                     </span>

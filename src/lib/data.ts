@@ -23,7 +23,7 @@ export const services = [
     description:
       "Custom songs for special moments, original artists distributed globally, and licensing for creators and brands.",
     href: "/services/music",
-    startingAt: "Custom songs from $250",
+    startingAt: "Custom songs from $19",
   },
   {
     id: "web",
@@ -182,10 +182,10 @@ export const audioPricing = [
 // ─── Music page ───────────────────────────────────────────────────────────────
 
 export const customSongPricing = [
-  { title: "Personal song (birthdays, anniversaries)", price: "$250" },
-  { title: "Wedding / proposal song", price: "$400" },
-  { title: "Brand anthem / corporate", price: "$500" },
-  { title: "Add a lyric video to any song", price: "from $150" },
+  { title: "Personal song (birthdays, anniversaries)", price: "$19" },
+  { title: "Wedding / proposal song", price: "$29" },
+  { title: "Brand anthem / corporate", price: "$39" },
+  { title: "Add a lyric video to any song", price: "$69" },
 ];
 
 export interface Artist {
