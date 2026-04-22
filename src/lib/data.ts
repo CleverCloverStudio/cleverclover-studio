@@ -496,6 +496,7 @@ export interface WorkProject {
   gradientTo?: string;
   accentColor?: string;
   youtubeId?: string;
+  spotifyTrackId?: string;
   spotifyEpisodeId?: string;
   spotifyShowId?: string;
   challenge: string;
@@ -565,17 +566,17 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 5,
-    title: "TrashCat — Single Release",
+    title: "I Don't Like Lima Beans — TrashCat",
     client: "Clever Clover Label",
     category: "Music",
     tags: ["Music", "Audio"],
-    description: "Production, mixing, and release of a hyperpop single with custom artwork concept.",
-    gradientFrom: "from-fuchsia-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(232,121,249,0.12)",
-    challenge: "Release a high-energy hyperpop single that stood out in an extremely crowded genre.",
-    solution: "Leaned into the chaotic, maximalist production style that defines TrashCat — loud, layered, and intentionally jarring in the best way.",
-    deliverables: ["Single production", "Mixing & mastering", "Distribution to all platforms"],
+    description:
+      "A dubstep EDM banger with a cinematic pop-punk wail. Written, produced, and distributed under the Clever Clover label. TrashCat doesn't stay in one lane — this track blends electronic intensity with unexpected vocal energy.",
+    spotifyTrackId: "2J1lQoabtitWLonzJ3bhrb",
+    externalUrl: "https://open.spotify.com/track/2J1lQoabtitWLonzJ3bhrb",
+    challenge: "Release a high-energy track that stood out in an oversaturated EDM landscape without losing the unhinged, wildcard energy that defines TrashCat.",
+    solution: "Leaned into genre collision — dubstep intensity layered with a cinematic pop-punk vocal that no one sees coming. Produced, mixed, and mastered entirely in-house.",
+    deliverables: ["Original track (written + produced)", "Mixing & mastering", "Distribution to all platforms via DistroKid"],
   },
   {
     id: 6,

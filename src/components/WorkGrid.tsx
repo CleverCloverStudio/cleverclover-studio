@@ -76,7 +76,7 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
                       }}
                     />
                   </>
-                ) : (project.spotifyEpisodeId || project.spotifyShowId) ? (
+                ) : (project.spotifyTrackId || project.spotifyEpisodeId || project.spotifyShowId) ? (
                   /* Spotify branded placeholder */
                   <div className="absolute inset-0 bg-gradient-to-br from-dark-300 to-dark-400">
                     <div
@@ -131,7 +131,7 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <span className="rounded-full border border-white/20 bg-dark/60 px-4 py-2 text-sm font-semibold text-cream backdrop-blur-sm">
-                    {project.youtubeId ? "Watch video" : (project.spotifyEpisodeId || project.spotifyShowId) ? "Listen now" : "View case study"}
+                    {project.youtubeId ? "Watch video" : (project.spotifyTrackId || project.spotifyEpisodeId || project.spotifyShowId) ? "Listen now" : "View case study"}
                   </span>
                 </div>
               </div>
@@ -176,7 +176,7 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
               className="fixed inset-x-4 bottom-0 top-8 z-50 mx-auto flex max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-white/10 bg-dark-200 md:inset-x-auto md:inset-y-8 md:rounded-2xl"
             >
               {/* Modal header / thumbnail */}
-              <div className={`relative shrink-0 overflow-hidden ${(selectedProject.spotifyEpisodeId || selectedProject.spotifyShowId) ? "h-[232px]" : "h-52"}`}>
+              <div className={`relative shrink-0 overflow-hidden ${selectedProject.spotifyTrackId ? "h-[152px]" : (selectedProject.spotifyEpisodeId || selectedProject.spotifyShowId) ? "h-[232px]" : "h-52"}`}>
                 {selectedProject.youtubeId ? (
                   <iframe
                     className="absolute inset-0 h-full w-full"
@@ -184,6 +184,14 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
                     title={selectedProject.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                  />
+                ) : selectedProject.spotifyTrackId ? (
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://open.spotify.com/embed/track/${selectedProject.spotifyTrackId}?theme=0`}
+                    title={selectedProject.title}
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
                   />
                 ) : selectedProject.spotifyEpisodeId ? (
                   <iframe
