@@ -115,26 +115,6 @@ export const videoPricing = [
   { title: "Monthly content retainer (4 videos)", price: "$1,000 – $1,800 /mo" },
 ];
 
-export const videoSamples = [
-  {
-    title: "CLOVER — Music Video",
-    description: "Original music video produced in DaVinci Resolve — from concept to color grade.",
-    gradient: "from-emerald-950 to-dark-300",
-    accent: "rgba(52,211,153,0.12)",
-  },
-  {
-    title: "CLOVER — Lyric Video",
-    description: "Animated lyric video for debut single, distributed globally.",
-    gradient: "from-emerald-950 to-dark-300",
-    accent: "rgba(52,211,153,0.12)",
-  },
-  {
-    title: "Event Highlight Reel",
-    description: "60-second recap from an Eliances networking event in Scottsdale.",
-    gradient: "from-sky-950 to-dark-300",
-    accent: "rgba(56,189,248,0.12)",
-  },
-];
 
 // ─── Audio page ───────────────────────────────────────────────────────────────
 
@@ -540,10 +520,57 @@ export const workProjects: WorkProject[] = [
     solution: "Full redesign in Wix Studio with a clean, mobile-first layout, integrated booking widget, and foundational SEO configuration.",
     deliverables: ["5-page Wix Studio site", "Booking system integration", "SEO setup", "Client training session"],
   },
+  {
+    id: 11,
+    title: "What If Our Pets Were Really God All Along",
+    client: "CLOVER",
+    category: "Video",
+    tags: ["Music", "Video", "Songwriting"],
+    description:
+      "An original song exploring the idea that our creator and loved ones who have passed watch over us through the eyes of our pets. Written, produced, and brought to life as a music video using real images animated in post-production. Dedicated to the creator's late grandparents.",
+    youtubeId: "qZWpe2nQBh4",
+    externalUrl: "https://www.youtube.com/watch?v=qZWpe2nQBh4",
+    challenge: "Create a deeply personal music video that honors real people without traditional film footage — working entirely from family photos.",
+    solution: "Wrote an original song, produced the full track, then animated family photographs in post-production to build a moving, cinematic music video dedicated to late grandparents.",
+    deliverables: ["Original song (written + produced)", "Animated photo music video", "Color grading", "YouTube release"],
+  },
+  {
+    id: 12,
+    title: "EVERY Body Is Beautiful",
+    client: "CLOVER",
+    category: "Video",
+    tags: ["Music", "Video", "Motion Graphics"],
+    description:
+      "An original body positivity anthem declaring that every body is beautiful. Written, produced, and paired with a cinematic music video designed to encourage self-love and challenge how we see ourselves.",
+    youtubeId: "5BOxus77zZI",
+    externalUrl: "https://www.youtube.com/watch?v=5BOxus77zZI",
+    challenge: "Write and produce an anthem with genuine emotional weight — one that feels personal rather than generic in an oversaturated category.",
+    solution: "Focused on specific, honest language in the songwriting, then built a music video with bold motion graphics that amplified the visual message of the lyrics.",
+    deliverables: ["Original anthem (written + produced)", "Cinematic music video", "Motion graphics", "YouTube release"],
+  },
+  {
+    id: 13,
+    title: "A John Wayne Song for Dad — Father's Day Commission",
+    client: "Private Commission",
+    category: "Video",
+    tags: ["Music", "Video", "Client Work"],
+    description:
+      "A client brought lyrics and a vision — turn them into a fully produced song and lyric video featuring his father as John Wayne, his dad's favorite actor. The final piece included family photos and animated clips. His father cries every time he watches it.",
+    youtubeId: "RJxsc3s3W-8",
+    externalUrl: "https://www.youtube.com/watch?v=RJxsc3s3W-8",
+    challenge: "Take a client's raw, heartfelt lyrics and transform them into a fully produced song and visual tribute — with no studio footage, only family photos and a creative brief.",
+    solution: "Produced an original country-inspired track from the client's lyrics, then built an animated lyric video incorporating family photos and custom John Wayne-themed visuals.",
+    deliverables: ["Full song production from client lyrics", "Animated lyric video", "Family photo integration", "YouTube + private delivery"],
+    testimonial: "His father cries every time he watches it. This is what it looks like when music and video make people feel something.",
+    testimonialAuthor: "Private Client",
+  },
 ];
 
 // Featured work on homepage — derived from the first 3 workProjects
 export const featuredWork = workProjects.filter((p) => [1, 2, 3].includes(p.id));
+
+// Video page portfolio samples
+export const videoSamples = workProjects.filter((p) => [11, 12, 13].includes(p.id));
 
 // ─── Products page ────────────────────────────────────────────────────────────
 

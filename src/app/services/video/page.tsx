@@ -6,6 +6,7 @@ import AnimatedReveal from "@/components/AnimatedReveal";
 import ProcessSteps from "@/components/ProcessSteps";
 import { PricingGrid } from "@/components/PricingCard";
 import CTASection from "@/components/CTASection";
+import FeaturedWorkCard from "@/components/FeaturedWorkCard";
 import { videoServiceTypes, videoProcess, videoPricing, videoSamples } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -102,35 +103,8 @@ export default function VideoPage() {
           </AnimatedReveal>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {videoSamples.map((sample, i) => (
-              <AnimatedReveal key={sample.title} delay={i * 0.08}>
-                <div className="group overflow-hidden rounded-2xl border border-white/8 bg-dark-200">
-                  <div
-                    className={`relative h-48 bg-gradient-to-br ${sample.gradient} overflow-hidden`}
-                  >
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background: `radial-gradient(ellipse at 30% 40%, ${sample.accent}, transparent 65%)`,
-                      }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-dark/50 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:border-gold/40">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" className="translate-x-0.5 text-cream">
-                          <path d="M2 1.5l10 5.5-10 5.5V1.5z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <p className="absolute bottom-3 right-3 rounded-full border border-white/15 bg-dark/60 px-2.5 py-0.5 text-xs text-cream backdrop-blur-sm">
-                      Placeholder
-                    </p>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-lg font-semibold text-cream">
-                      {sample.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted">{sample.description}</p>
-                  </div>
-                </div>
+              <AnimatedReveal key={sample.id} delay={i * 0.08}>
+                <FeaturedWorkCard project={sample} />
               </AnimatedReveal>
             ))}
           </div>
