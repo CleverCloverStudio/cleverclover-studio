@@ -20,7 +20,7 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
   const filtered =
     activeFilter === "All"
       ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      : projects.filter((p) => p.tags.includes(activeFilter));
 
   return (
     <>
