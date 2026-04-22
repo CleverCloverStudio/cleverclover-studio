@@ -53,10 +53,20 @@ export default function BookingForm() {
     e.preventDefault();
     setStatus("submitting");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/xjgplrbk", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone || "Not provided",
+          project_type: form.projectType,
+          budget_range: form.budget,
+          project_description: form.message,
+        }),
       });
       if (!res.ok) throw new Error("Failed");
       setStatus("success");

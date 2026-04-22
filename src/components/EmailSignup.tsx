@@ -6,10 +6,26 @@ export default function EmailSignup() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
-    // Will be wired to an email platform later
+    try {
+      const res = await fetch("https://formspree.io/f/xjgplrbk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          _subject: "New product waitlist signup",
+          source: "Products page — template waitlist",
+        }),
+      });
+      if (!res.ok) throw new Error("Failed");
+    } catch {
+      // Show success regardless — don't block the user on a network error
+    }
     setSubmitted(true);
   }
 
