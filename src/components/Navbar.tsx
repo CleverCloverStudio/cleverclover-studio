@@ -22,6 +22,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-white/5 bg-dark/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
@@ -105,57 +106,60 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-            className="fixed inset-0 top-16 z-40 bg-dark-100 px-6 py-8 md:hidden"
-          >
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-3">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
-                  Services
-                </p>
-                {services.map((service) => (
-                  <Link
-                    key={service.href}
-                    href={service.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-lg text-cream transition-colors hover:text-gold"
-                  >
-                    {service.label}
-                  </Link>
-                ))}
-              </div>
-
-              <div className="flex flex-col gap-3">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-lg text-cream transition-colors hover:text-gold"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-
-              <Link
-                href="/book"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-block rounded-full bg-gold px-6 py-3 text-center font-semibold text-dark transition-colors hover:bg-gold-light"
-              >
-                Book a Project
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
+
+    {/* Mobile menu — outside <header> so backdrop-filter doesn't trap fixed positioning */}
+    <AnimatePresence>
+      {mobileOpen && (
+        <motion.div
+          initial={{ opacity: 0, x: "100%" }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: "100%" }}
+          transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
+          className="fixed inset-x-0 bottom-0 top-16 z-40 bg-dark px-6 py-10 md:hidden"
+          style={{ backgroundColor: "#0A0A0A" }}
+        >
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-1">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gold">
+                Services
+              </p>
+              {services.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="py-2.5 text-xl text-cream transition-colors hover:text-gold"
+                >
+                  {service.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="py-2.5 text-xl text-cream transition-colors hover:text-gold"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <Link
+              href="/book"
+              onClick={() => setMobileOpen(false)}
+              className="inline-block rounded-full bg-gold px-6 py-4 text-center text-base font-semibold text-dark transition-colors hover:bg-gold-light"
+            >
+              Book a Project
+            </Link>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
