@@ -7,6 +7,7 @@ export const services = [
     description:
       "Cinematic editing, color grading, and motion graphics in DaVinci Resolve — from 30-second social content to full brand stories.",
     href: "/services/video",
+    startingAt: "Projects from $75",
   },
   {
     id: "audio",
@@ -14,6 +15,7 @@ export const services = [
     description:
       "Podcast production, mixing, mastering, and sound design that makes your audience lean in and stay there.",
     href: "/services/audio",
+    startingAt: "Projects from $40",
   },
   {
     id: "music",
@@ -21,6 +23,7 @@ export const services = [
     description:
       "Custom songs for special moments, original artists distributed globally, and licensing for creators and brands.",
     href: "/services/music",
+    startingAt: "Custom songs from $250",
   },
   {
     id: "web",
@@ -28,6 +31,7 @@ export const services = [
     description:
       "Professional sites built in Wix Studio or custom-coded in Next.js — designed to look premium and convert.",
     href: "/services/web",
+    startingAt: "Sites from $150",
   },
   {
     id: "products",
@@ -35,6 +39,7 @@ export const services = [
     description:
       "AI music production prompt packs, guides, and templates — refined over 8,000 songs.",
     href: "/products",
+    startingAt: "Prompt packs from $19",
   },
 ];
 
@@ -108,11 +113,11 @@ export const videoProcess = [
 ];
 
 export const videoPricing = [
-  { title: "Social media video (30–60s)", price: "$150 – $300" },
-  { title: "Brand / promo video (1–3 min)", price: "$500 – $1,200" },
-  { title: "Lyric video (animated)", price: "$300 – $800" },
-  { title: "Full event recap", price: "$800 – $2,000" },
-  { title: "Monthly content retainer (4 videos)", price: "$1,000 – $1,800 /mo" },
+  { title: "Social media video (30–60s)", price: "$75" },
+  { title: "Lyric video (animated)", price: "$150" },
+  { title: "Brand / promo video (1–3 min)", price: "$250" },
+  { title: "Event recap", price: "$400" },
+  { title: "Monthly content retainer (4 videos)", price: "$500/mo" },
 ];
 
 
@@ -167,20 +172,20 @@ export const audioProcess = [
 ];
 
 export const audioPricing = [
-  { title: "Podcast episode edit (up to 60 min)", price: "$75 – $200" },
-  { title: "Full podcast launch (intro/outro + first 3 eps)", price: "$500 – $1,000" },
-  { title: "Song mixing + mastering", price: "$200 – $500" },
-  { title: "Sound design package (per video)", price: "$150 – $400" },
-  { title: "Monthly podcast retainer (4 eps/mo)", price: "$600 – $1,200 /mo" },
+  { title: "Podcast episode edit (up to 60 min)", price: "$40" },
+  { title: "Sound design package (per video)", price: "$75" },
+  { title: "Song mixing + mastering", price: "$100" },
+  { title: "Full podcast launch (intro/outro + first 3 eps)", price: "$250" },
+  { title: "Monthly podcast retainer (4 eps/mo)", price: "$300/mo" },
 ];
 
 // ─── Music page ───────────────────────────────────────────────────────────────
 
 export const customSongPricing = [
-  { title: "Personal song (birthdays, anniversaries)", price: "$500 – $1,000" },
-  { title: "Wedding / proposal song", price: "$800 – $1,500" },
-  { title: "Brand anthem / corporate", price: "$1,000 – $2,500" },
-  { title: "Add a lyric video to any song", price: "+ $300 – $600" },
+  { title: "Personal song (birthdays, anniversaries)", price: "$250" },
+  { title: "Wedding / proposal song", price: "$400" },
+  { title: "Brand anthem / corporate", price: "$500" },
+  { title: "Add a lyric video to any song", price: "from $150" },
 ];
 
 export interface Artist {
@@ -244,29 +249,29 @@ export const artists: Artist[] = [
 ];
 
 export const musicVideoPricing = [
-  { title: "Lyric video (animated)", price: "$300 – $800" },
-  { title: "Visualizer / motion graphics video", price: "$500 – $1,200" },
-  { title: "Full music video (original visuals, editing, color)", price: "$800 – $2,500" },
-  { title: "Song-to-screen (write + produce song + music video)", price: "$1,500 – $4,000" },
+  { title: "Lyric video (animated)", price: "$150" },
+  { title: "Visualizer / motion graphics video", price: "$250" },
+  { title: "Full music video (original visuals, editing, color)", price: "$400" },
+  { title: "Song-to-screen (write + produce song + music video)", price: "$750" },
 ];
 
 export const licensingTiers = [
   {
     title: "Personal use",
     subtitle: "YouTube, podcast, personal projects",
-    price: "$25 – $75",
+    price: "$15",
     description: "License a track for non-commercial use across personal content.",
   },
   {
     title: "Commercial use",
     subtitle: "Ads, brand content, paid campaigns",
-    price: "$150 – $500",
+    price: "$75",
     description: "Full commercial rights for monetized content and brand campaigns.",
   },
   {
     title: "Exclusive rights",
     subtitle: "Own the track entirely",
-    price: "$1,000+",
+    price: "$500",
     description:
       "Full ownership transfer — the track is yours and pulled from public distribution.",
   },
@@ -306,52 +311,78 @@ export const webIncludes = [
 ];
 
 export const webPricing = [
-  { title: "Landing page (1 page)", price: "$300 – $600" },
-  { title: "Business website (3–5 pages)", price: "$800 – $2,000" },
-  { title: "Full website (6+ pages, CMS, integrations)", price: "$2,000 – $4,000" },
-  { title: "E-commerce setup", price: "$1,500 – $3,500" },
-  { title: "Monthly maintenance + updates", price: "$100 – $300 /mo" },
+  { title: "Landing page (1 page)", price: "$150" },
+  { title: "Business website (3–5 pages)", price: "$400" },
+  { title: "E-commerce setup", price: "$750" },
+  { title: "Full website (6+ pages, CMS, integrations)", price: "$1,000" },
+  { title: "Monthly maintenance + updates", price: "$50/mo" },
 ];
 
 // ─── Packages page ────────────────────────────────────────────────────────────
 
-export const packages = [
+export type PackageTier = "quick" | "popular" | "premium";
+
+export interface Package {
+  id: string;
+  tier: PackageTier;
+  title: string;
+  tag?: string;
+  tagColor?: "gold" | "muted";
+  description: string;
+  includes: string[];
+  price: string;
+  href: string;
+  ctaText?: string;
+}
+
+export const packages: Package[] = [
+  // ── Quick Starts ──────────────────────────────────────────────────────────
   {
-    id: "business-launch",
-    title: "Business Launch",
-    tag: "Most popular",
-    tagColor: "gold",
-    description:
-      "Website (up to 5 pages) + 60-second brand video + basic sound design. Everything a new business needs to launch with a professional digital presence.",
+    id: "quick-social-video",
+    tier: "quick",
+    title: "Quick Start — Social Video",
+    description: "A polished 30–60 second video ready to post on any platform. Fast turnaround, no fluff.",
     includes: [
-      "Website — up to 5 pages",
-      "60-second brand video",
-      "Sound design for video",
+      "30–60 second edited video",
+      "Platform-optimized export",
+      "Sound design included",
+    ],
+    price: "$75",
+    href: "/book",
+    ctaText: "Book this",
+  },
+  {
+    id: "quick-landing-page",
+    tier: "quick",
+    title: "Quick Start — Landing Page",
+    description: "A single-page website that looks premium, loads fast, and converts visitors into inquiries.",
+    includes: [
+      "Single page, mobile-ready",
+      "Contact / booking form",
       "SEO fundamentals",
-      "30 days post-launch support",
     ],
-    price: "$1,800 – $3,500",
+    price: "$150",
     href: "/book",
+    ctaText: "Book this",
   },
   {
-    id: "song-to-screen",
-    title: "Song-to-Screen",
-    tag: "Full creative",
-    tagColor: "gold",
-    description:
-      "From silence to a finished, distributed song with a professional music video — the complete artistic vision, handled entirely in-house.",
+    id: "quick-podcast-episode",
+    tier: "quick",
+    title: "Quick Start — Podcast Episode",
+    description: "One episode edited, polished, and delivered — ready to publish without the headache.",
     includes: [
-      "Custom original song (written + produced)",
-      "Full music video in DaVinci Resolve",
-      "Color grading & sound design",
-      "Distribution setup via DistroKid",
-      "Export-ready for all platforms",
+      "One episode edited (up to 60 min)",
+      "Noise reduction & audio cleanup",
+      "Ready-to-publish file",
     ],
-    price: "$1,500 – $4,000",
+    price: "$40",
     href: "/book",
+    ctaText: "Book this",
   },
+  // ── Popular ───────────────────────────────────────────────────────────────
   {
     id: "podcast-launch",
+    tier: "popular",
     title: "Podcast Launch",
     tag: "For creators",
     tagColor: "muted",
@@ -364,33 +395,79 @@ export const packages = [
       "Distribution setup guidance",
       "Show notes template",
     ],
-    price: "$800 – $1,500",
+    price: "$400",
     href: "/book",
+    ctaText: "Book this package",
   },
   {
+    id: "business-launch",
+    tier: "popular",
+    title: "Business Launch",
+    tag: "Most popular",
+    tagColor: "gold",
+    description:
+      "Website (up to 5 pages) + 60-second brand video + sound design. Everything a new business needs to launch with a professional digital presence.",
+    includes: [
+      "Website — up to 5 pages",
+      "60-second brand video",
+      "Sound design for video",
+      "SEO fundamentals",
+      "30 days post-launch support",
+    ],
+    price: "$900",
+    href: "/book",
+    ctaText: "Book this package",
+  },
+  {
+    id: "song-to-screen",
+    tier: "popular",
+    title: "Song-to-Screen",
+    tag: "Full creative",
+    tagColor: "gold",
+    description:
+      "From silence to a finished, distributed song with a professional music video — the complete artistic vision, handled entirely in-house.",
+    includes: [
+      "Custom original song (written + produced)",
+      "Full music video in DaVinci Resolve",
+      "Color grading & sound design",
+      "Distribution setup via DistroKid",
+      "Export-ready for all platforms",
+    ],
+    price: "$750",
+    href: "/book",
+    ctaText: "Book this package",
+  },
+  // ── Premium ───────────────────────────────────────────────────────────────
+  {
     id: "full-brand",
+    tier: "premium",
     title: "Full Brand Build",
     tag: "Premium",
     tagColor: "gold",
     description:
-      "The complete creative launch. For businesses that want to come out swinging with a cohesive, premium presence.",
+      "The complete creative launch. For businesses that want to come out swinging with a cohesive, premium presence across every channel.",
     includes: [
-      "Website (full build)",
-      "Brand video",
-      "Custom brand anthem",
-      "Social media launch content (5 pieces)",
-      "Voiceover for any video (via CloverVoiceover.com)",
+      "Custom website design (up to 8 pages)",
+      "60–90 second cinematic brand video",
+      "Original brand anthem / theme music",
+      "5 social media content pieces",
+      "Professional voiceover for any video",
+      "Full SEO setup",
+      "30 days post-launch support",
+      "2 rounds of revisions on all deliverables",
     ],
-    price: "$4,000 – $7,500",
+    price: "$2,000",
     href: "/book",
+    ctaText: "Book a discovery call",
   },
   {
     id: "monthly-partner",
+    tier: "premium",
     title: "Monthly Content Partner",
     tag: "Ongoing",
     tagColor: "muted",
     description:
-      "A creative team on retainer. For businesses that need consistent, high-quality content without the overhead of a full in-house team.",
+      "Your creative team on retainer — without the overhead of hiring in-house. Consistent, high-quality content every month.",
     includes: [
       "4 videos per month",
       "2 audio pieces per month",
@@ -398,8 +475,9 @@ export const packages = [
       "Priority booking",
       "Monthly strategy check-in",
     ],
-    price: "$2,000 – $3,500 /mo",
+    price: "$1,000/mo",
     href: "/book",
+    ctaText: "Book a discovery call",
   },
 ];
 

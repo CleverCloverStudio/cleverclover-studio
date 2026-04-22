@@ -47,9 +47,12 @@ export default function Home() {
               title="One studio. Every discipline."
               subtitle="From the first concept to the final deliverable — video, audio, music, and web all built under one roof with one point of contact."
             />
+            <p className="mt-4 text-sm text-muted">
+              Projects starting at $40 — from podcast edits to full brand builds.
+            </p>
           </AnimatedReveal>
 
-          <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
             {services.map((service, i) => (
               <AnimatedReveal key={service.id} delay={i * 0.08}>
                 <ServiceCard {...service} index={i} />

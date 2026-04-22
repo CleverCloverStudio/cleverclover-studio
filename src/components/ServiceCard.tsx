@@ -5,6 +5,7 @@ interface ServiceCardProps {
   title: string;
   description: string;
   href: string;
+  startingAt?: string;
   index?: number;
 }
 
@@ -13,6 +14,7 @@ export default function ServiceCard({
   title,
   description,
   href,
+  startingAt,
 }: ServiceCardProps) {
   return (
     <Link
@@ -30,6 +32,9 @@ export default function ServiceCard({
           {title}
         </h3>
         <p className="text-sm leading-relaxed text-muted-light">{description}</p>
+        {startingAt && (
+          <p className="text-xs font-medium text-gold/70">{startingAt}</p>
+        )}
       </div>
 
       {/* Arrow link */}

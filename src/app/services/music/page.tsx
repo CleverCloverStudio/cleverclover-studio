@@ -46,10 +46,15 @@ export default function MusicPage() {
                   key={item.title}
                   className="flex flex-col gap-3 rounded-xl border border-white/8 bg-dark-200 p-6 transition-all duration-300 hover:border-gold/20 hover:bg-dark-300"
                 >
-                  <p className="text-sm font-medium text-muted-light">{item.title}</p>
-                  <p className="mt-auto font-display text-2xl font-bold text-gold">
-                    {item.price}
-                  </p>
+                  <p className="text-sm font-semibold text-cream">{item.title}</p>
+                  <div className="mt-auto pt-2">
+                    <span className="block text-[10px] font-semibold uppercase tracking-widest text-gold/60">
+                      starting at
+                    </span>
+                    <span className="font-display text-xl font-medium text-gold">
+                      {item.price}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -148,9 +153,14 @@ export default function MusicPage() {
                   <p className="text-sm leading-relaxed text-muted-light">
                     {tier.description}
                   </p>
-                  <p className="mt-auto pt-3 font-display text-2xl font-bold text-gold">
-                    {tier.price}
-                  </p>
+                  <div className="mt-auto pt-3">
+                    <span className="block text-[10px] font-semibold uppercase tracking-widest text-gold/60">
+                      starting at
+                    </span>
+                    <span className="font-display text-xl font-medium text-gold">
+                      {tier.price}
+                    </span>
+                  </div>
                 </div>
               </AnimatedReveal>
             ))}
