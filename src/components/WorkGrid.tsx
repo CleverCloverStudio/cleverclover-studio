@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import type { WorkProject, WorkCategory } from "@/lib/data";
 
@@ -58,15 +59,35 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
               className="group flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-dark-200 text-left transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl"
             >
               {/* Thumbnail */}
-              <div
-                className={`relative h-48 bg-gradient-to-br ${project.gradientFrom} ${project.gradientTo} overflow-hidden`}
-              >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: `radial-gradient(ellipse at 30% 40%, ${project.accentColor}, transparent 65%)`,
-                  }}
-                />
+              <div className="relative h-48 overflow-hidden">
+                {project.youtubeId ? (
+                  <>
+                    <Image
+                      src={`https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg`}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "radial-gradient(ellipse 90% 90% at 50% 50%, transparent 30%, rgba(0,0,0,0.55) 100%)",
+                      }}
+                    />
+                  </>
+                ) : (
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${project.gradientFrom ?? "from-dark-300"} ${project.gradientTo ?? "to-dark-400"}`}
+                  >
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: `radial-gradient(ellipse at 30% 40%, ${project.accentColor ?? "rgba(201,168,76,0.1)"}, transparent 65%)`,
+                      }}
+                    />
+                  </div>
+                )}
                 {/* Tags */}
                 <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
@@ -81,7 +102,7 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <span className="rounded-full border border-white/20 bg-dark/60 px-4 py-2 text-sm font-semibold text-cream backdrop-blur-sm">
-                    View case study
+                    {project.youtubeId ? "Watch video" : "View case study"}
                   </span>
                 </div>
               </div>
@@ -126,29 +147,41 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
               className="fixed inset-x-4 bottom-0 top-8 z-50 mx-auto flex max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-white/10 bg-dark-200 md:inset-x-auto md:inset-y-8 md:rounded-2xl"
             >
               {/* Modal header / thumbnail */}
-              <div
-                className={`relative h-52 shrink-0 bg-gradient-to-br ${selectedProject.gradientFrom} ${selectedProject.gradientTo} overflow-hidden`}
-              >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: `radial-gradient(ellipse at 30% 50%, ${selectedProject.accentColor}, transparent 65%)`,
-                  }}
-                />
-                <div className="absolute bottom-4 left-6 flex flex-wrap gap-1.5">
-                  {selectedProject.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/15 bg-dark/60 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-cream backdrop-blur-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <div className="relative h-52 shrink-0 overflow-hidden">
+                {selectedProject.youtubeId ? (
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://www.youtube.com/embed/${selectedProject.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+                    title={selectedProject.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${selectedProject.gradientFrom ?? "from-dark-300"} ${selectedProject.gradientTo ?? "to-dark-400"}`}
+                  >
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: `radial-gradient(ellipse at 30% 50%, ${selectedProject.accentColor ?? "rgba(201,168,76,0.1)"}, transparent 65%)`,
+                      }}
+                    />
+                    <div className="absolute bottom-4 left-6 flex flex-wrap gap-1.5">
+                      {selectedProject.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-white/15 bg-dark/60 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-cream backdrop-blur-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <button
                   onClick={() => setSelectedProject(null)}
                   aria-label="Close"
-                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-dark/50 text-cream backdrop-blur-sm transition-colors hover:bg-dark/70"
+                  className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-dark/50 text-cream backdrop-blur-sm transition-colors hover:bg-dark/70"
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                     <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

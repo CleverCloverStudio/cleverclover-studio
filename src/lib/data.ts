@@ -52,41 +52,6 @@ export const proofItems = [
   "RadiaRadio on YouTube",
 ];
 
-export const featuredWork = [
-  {
-    id: 1,
-    title: "CLOVER — Music Video Series",
-    client: "Clever Clover Label",
-    tags: ["Video", "Music"],
-    description:
-      "Original music videos produced entirely in-house — songwriting, production, visual editing, and color grading in DaVinci Resolve.",
-    gradientFrom: "from-emerald-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(52,211,153,0.15)",
-  },
-  {
-    id: 2,
-    title: "CLOVER — Debut EP",
-    client: "Clever Clover Label",
-    tags: ["Music", "Audio"],
-    description:
-      "Full production, mixing, mastering, and global distribution for CLOVER's debut release across all streaming platforms.",
-    gradientFrom: "from-emerald-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(52, 211, 153, 0.12)",
-  },
-  {
-    id: 3,
-    title: "Studio Launch — Full Brand Build",
-    client: "Internal Project",
-    tags: ["Web", "Video", "Music"],
-    description:
-      "Custom-coded Next.js site, brand video, and original launch music — built entirely in-house.",
-    gradientFrom: "from-violet-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(167, 139, 250, 0.12)",
-  },
-];
 
 // ─── Video page ───────────────────────────────────────────────────────────────
 
@@ -448,9 +413,10 @@ export interface WorkProject {
   category: WorkCategory;
   tags: string[];
   description: string;
-  gradientFrom: string;
-  gradientTo: string;
-  accentColor: string;
+  gradientFrom?: string;
+  gradientTo?: string;
+  accentColor?: string;
+  youtubeId?: string;
   challenge: string;
   solution: string;
   deliverables: string[];
@@ -462,75 +428,45 @@ export interface WorkProject {
 export const workProjects: WorkProject[] = [
   {
     id: 1,
-    title: "CLOVER — Music Video Collection",
-    client: "Clever Clover Label",
+    title: "Better Than Yours — Comic-Book Pop Motion Video",
+    client: "CLOVER",
     category: "Video",
-    tags: ["Video", "Music"],
-    description: "A series of original music videos produced entirely in-house — from songwriting and production to visual editing and color grading in DaVinci Resolve.",
-    gradientFrom: "from-emerald-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(52,211,153,0.15)",
-    challenge: "Create a cohesive visual identity for CLOVER's music across multiple releases without a dedicated film crew or budget.",
-    solution: "Handled every element in-house: songwriting, full audio production, video editing, motion graphics, and color grading — all in DaVinci Resolve.",
-    deliverables: ["Music video series", "Color grading", "Motion graphics", "Distribution to YouTube / streaming"],
-    externalUrl: "https://www.youtube.com/@RadiaRadio",
-  },
-  {
-    id: 9,
-    title: "RadiaRadio — Original Music Channel",
-    client: "Clever Clover Label",
-    category: "Music",
-    tags: ["Video", "Music"],
-    description: "A dedicated YouTube channel showcasing original music and videos across multiple genres and artist identities.",
-    gradientFrom: "from-rose-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(251,113,133,0.12)",
-    challenge: "Build a consistent publishing presence for original music across multiple artist identities and genres.",
-    solution: "Developed the RadiaRadio channel as an umbrella home for all original music video content — regularly updated with new releases.",
-    deliverables: ["YouTube channel", "Original music videos", "Multi-genre catalog", "Ongoing content production"],
-    externalUrl: "https://www.youtube.com/@RadiaRadio",
-  },
-  {
-    id: 10,
-    title: "Lyric Video Production",
-    client: "Clever Clover Label",
-    category: "Video",
-    tags: ["Video", "Music", "Motion Graphics"],
-    description: "Animated lyric videos designed to enhance the listening experience and drive engagement on streaming and social platforms.",
-    gradientFrom: "from-violet-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(167,139,250,0.12)",
-    challenge: "Produce polished animated lyric videos at scale without sacrificing quality or visual consistency.",
-    solution: "Built reusable motion graphics systems in DaVinci Resolve allowing fast, high-quality lyric video production across multiple releases.",
-    deliverables: ["Animated lyric videos", "Motion graphics", "Color grading", "Platform-optimized exports"],
+    tags: ["Music", "Video", "Motion Graphics"],
+    description:
+      "Original pop punk track — written, produced, and brought to life as a comic-book style motion video. Songwriting, music production, and video creation delivered as a complete package by one person.",
+    youtubeId: "dSg7tiVy89Q",
+    externalUrl: "https://www.youtube.com/watch?v=dSg7tiVy89Q",
+    challenge: "Produce a complete song-to-screen release — original track plus full motion video — entirely solo, on a tight timeline.",
+    solution: "Wrote, recorded, and produced the song in-house, then built a comic-book style motion video in DaVinci Resolve with custom graphics and frame-by-frame animation.",
+    deliverables: ["Original song (written + produced)", "Comic-book motion video", "Color grading", "YouTube + streaming release"],
   },
   {
     id: 2,
-    title: "CLOVER — Debut EP Production",
-    client: "Clever Clover Label",
-    category: "Music",
-    tags: ["Music", "Audio", "Distribution"],
-    description: "Full production, mixing, mastering, and global distribution for CLOVER's debut release.",
-    gradientFrom: "from-emerald-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(52,211,153,0.12)",
-    challenge: "Build an artist from scratch — concept, sound, identity, and release — with no prior catalog.",
-    solution: "We developed CLOVER's sonic identity, produced the full EP, and handled distribution through DistroKid to all major platforms simultaneously.",
-    deliverables: ["4-track EP", "Mixing & mastering", "Global distribution", "Artist profile setup"],
+    title: "What I Bring to the Table — A Spoken Word Business Card",
+    client: "CLOVER",
+    category: "Video",
+    tags: ["Video", "Music", "Branding"],
+    description:
+      "A spoken word rap transformed into a cinematic lyric video — turning a business pitch into a creative brand piece. Concept, writing, music production, animation, and editing all done in-house.",
+    youtubeId: "PmNJKyAREXk",
+    externalUrl: "https://www.youtube.com/watch?v=PmNJKyAREXk",
+    challenge: "Turn a personal brand pitch into something visually compelling and shareable — not a slide deck, but a creative statement.",
+    solution: "Wrote and produced an original spoken word rap, then built a cinematic animated lyric video that serves as both a portfolio piece and a living business card.",
+    deliverables: ["Original spoken word track", "Cinematic lyric video", "Brand identity integration", "YouTube release"],
   },
   {
     id: 3,
-    title: "Studio Launch — Full Brand Build",
-    client: "Internal Project",
-    category: "Web",
-    tags: ["Web", "Video", "Music"],
-    description: "Custom-coded Next.js site, brand video, and original launch music — built entirely in-house.",
-    gradientFrom: "from-violet-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(167,139,250,0.12)",
-    challenge: "Launch an entirely new creative studio with no prior web presence, brand assets, or media.",
-    solution: "We built everything from concept to launch: identity, site, brand video, and an original brand anthem — all under one roof.",
-    deliverables: ["Custom Next.js website", "Brand video", "Original brand anthem", "Social media launch kit"],
+    title: "NBA Finals — Hiring Creatives",
+    client: "CLOVER",
+    category: "Video",
+    tags: ["Video", "Content Creation"],
+    description:
+      "On-location talking head video shot at the NBA Finals, discussing the value of hiring creative professionals. Demonstrates video production, on-camera presence, and real-world content creation.",
+    youtubeId: "SZ95ZRveEk0",
+    externalUrl: "https://www.youtube.com/watch?v=SZ95ZRveEk0",
+    challenge: "Capture compelling, professional-quality content in an uncontrolled live-event environment without a dedicated crew.",
+    solution: "Shot, directed, and delivered a clean talking head video on location at the NBA Finals — proving that professional results don't require a studio setup.",
+    deliverables: ["On-location video production", "Talking head edit", "Sound mixing", "YouTube release"],
   },
   {
     id: 4,
@@ -605,6 +541,9 @@ export const workProjects: WorkProject[] = [
     deliverables: ["5-page Wix Studio site", "Booking system integration", "SEO setup", "Client training session"],
   },
 ];
+
+// Featured work on homepage — derived from the first 3 workProjects
+export const featuredWork = workProjects.filter((p) => [1, 2, 3].includes(p.id));
 
 // ─── Products page ────────────────────────────────────────────────────────────
 

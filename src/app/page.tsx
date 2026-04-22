@@ -5,6 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import AnimatedReveal from "@/components/AnimatedReveal";
+import FeaturedWorkCard from "@/components/FeaturedWorkCard";
 import { services, proofItems, featuredWork } from "@/lib/data";
 
 export default function Home() {
@@ -97,57 +98,7 @@ export default function Home() {
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {featuredWork.map((project, i) => (
               <AnimatedReveal key={project.id} delay={i * 0.1}>
-                <Link
-                  href="/work"
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-dark-200 transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl"
-                >
-                  {/* Thumbnail placeholder */}
-                  <div
-                    className={`relative h-52 bg-gradient-to-br ${project.gradientFrom} ${project.gradientTo} overflow-hidden`}
-                  >
-                    {/* Simulated image overlay */}
-                    <div
-                      className="absolute inset-0 opacity-60"
-                      style={{
-                        background: `radial-gradient(ellipse at 30% 40%, ${project.accentColor}, transparent 65%)`,
-                      }}
-                    />
-                    {/* Tags */}
-                    <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-white/15 bg-dark/60 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-cream backdrop-blur-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    {/* Play icon for video projects */}
-                    {project.tags.includes("Video") && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold/40 group-hover:bg-dark/70">
-                          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" className="translate-x-0.5 text-cream">
-                            <path d="M2 1.5l10 5.5-10 5.5V1.5z" />
-                          </svg>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Card body */}
-                  <div className="flex flex-col gap-2 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-gold">
-                      {project.client}
-                    </p>
-                    <h3 className="font-display text-lg font-semibold text-cream">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted">
-                      {project.description}
-                    </p>
-                  </div>
-                </Link>
+                <FeaturedWorkCard project={project} />
               </AnimatedReveal>
             ))}
           </div>
