@@ -496,6 +496,7 @@ export interface WorkProject {
   gradientTo?: string;
   accentColor?: string;
   youtubeId?: string;
+  spotifyEpisodeId?: string;
   challenge: string;
   solution: string;
   deliverables: string[];
@@ -577,17 +578,17 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 6,
-    title: "Podcast Series — Full Production",
-    client: "Confidential Client",
+    title: "Paradoxxed — The Walt Paradox (Episode 5)",
+    client: "Clever Clover Studio",
     category: "Audio",
-    tags: ["Audio", "Podcast"],
-    description: "End-to-end production for a 12-episode business podcast series, from raw interviews to publish-ready episodes.",
-    gradientFrom: "from-orange-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(251,146,60,0.12)",
-    challenge: "Turn unedited, 90-minute raw interview recordings into tight, polished 30-minute episodes — consistently, at scale.",
-    solution: "Built a streamlined post-production workflow with consistent audio treatment, intro/outro music, and show notes for every episode.",
-    deliverables: ["12 edited episodes", "Custom intro/outro music", "Show notes", "Distribution setup"],
+    tags: ["Audio", "Music", "Storytelling"],
+    description:
+      "Paradoxxed is an original technology storytelling podcast — science fiction told in a true-crime style, with a twist ending every episode. Written, voiced in multiple character performances, and fully produced with original music and sound design. In 'The Walt Paradox,' AI is released 100 years early into the hands of Walt Disney. What happens next changes everything. 6 episodes produced. All writing, voice acting, music, and sound design by one person.",
+    spotifyEpisodeId: "6GlqEn4Fb9XZirCJhThBqs",
+    externalUrl: "https://open.spotify.com/episode/6GlqEn4Fb9XZirCJhThBqs",
+    challenge: "Create a fully produced narrative fiction podcast — with multiple voice characters, original music, and layered sound design — entirely solo, with no cast or production team.",
+    solution: "Wrote all scripts, performed every character voice, composed original music and sound design, and produced all 6 episodes in-house. Built a signature format: science fiction told with the tension and structure of true crime.",
+    deliverables: ["6 original episodes written + produced", "Multiple character voice performances", "Original music per episode", "Full sound design", "Distributed on Spotify"],
   },
   {
     id: 7,

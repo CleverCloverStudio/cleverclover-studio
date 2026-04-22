@@ -76,6 +76,35 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
                       }}
                     />
                   </>
+                ) : project.spotifyEpisodeId ? (
+                  /* Spotify branded placeholder */
+                  <div className="absolute inset-0 bg-gradient-to-br from-dark-300 to-dark-400">
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "radial-gradient(ellipse 70% 70% at 50% 40%, rgba(30,215,96,0.10) 0%, transparent 65%)",
+                      }}
+                    />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 px-4 text-center">
+                      <span className="font-display text-2xl font-black text-cream leading-tight">
+                        {project.title.split(" — ")[0]}
+                      </span>
+                      {project.title.includes(" — ") && (
+                        <span className="text-xs font-medium text-muted-light">
+                          {project.title.split(" — ").slice(1).join(" — ")}
+                        </span>
+                      )}
+                    </div>
+                    {/* Spotify-green play button */}
+                    <div className="absolute inset-0 flex items-end justify-end p-3">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1DB954] shadow-[0_0_16px_rgba(30,215,96,0.4)] transition-transform duration-300 group-hover:scale-110">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" className="translate-x-0.5 text-black">
+                          <path d="M2 1.5l9 4.5-9 4.5V1.5z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                 ) : (
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradientFrom ?? "from-dark-300"} ${project.gradientTo ?? "to-dark-400"}`}
@@ -102,7 +131,7 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <span className="rounded-full border border-white/20 bg-dark/60 px-4 py-2 text-sm font-semibold text-cream backdrop-blur-sm">
-                    {project.youtubeId ? "Watch video" : "View case study"}
+                    {project.youtubeId ? "Watch video" : project.spotifyEpisodeId ? "Listen now" : "View case study"}
                   </span>
                 </div>
               </div>
@@ -147,7 +176,7 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
               className="fixed inset-x-4 bottom-0 top-8 z-50 mx-auto flex max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-white/10 bg-dark-200 md:inset-x-auto md:inset-y-8 md:rounded-2xl"
             >
               {/* Modal header / thumbnail */}
-              <div className="relative h-52 shrink-0 overflow-hidden">
+              <div className={`relative shrink-0 overflow-hidden ${selectedProject.spotifyEpisodeId ? "h-[232px]" : "h-52"}`}>
                 {selectedProject.youtubeId ? (
                   <iframe
                     className="absolute inset-0 h-full w-full"
@@ -155,6 +184,14 @@ export default function WorkGrid({ projects }: { projects: WorkProject[] }) {
                     title={selectedProject.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                  />
+                ) : selectedProject.spotifyEpisodeId ? (
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://open.spotify.com/embed/episode/${selectedProject.spotifyEpisodeId}?theme=0`}
+                    title={selectedProject.title}
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
                   />
                 ) : (
                   <div
