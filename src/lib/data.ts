@@ -183,7 +183,7 @@ export const audioPricing = [
 
 export const customSongPricing = [
   { title: "Personal song (birthdays, anniversaries)", price: "$19", stripeUrl: "https://buy.stripe.com/9B6aERb3jf2U6tu3Lt9bO06" },
-  { title: "Wedding / proposal song", price: "$29", stripeUrl: "https://buy.stripe.com/14A3cp3ARf2U2de1Dl9bO07" },
+  { title: "Wedding / proposal song", price: "$29", stripeUrl: "https://buy.stripe.com/14A3cp3ARf2U2de1Dl9bO07", upsellNote: "Want more than one song? Ask about our full wedding album package — 9 original tracks covering every moment of your night." },
   { title: "Brand anthem / corporate", price: "$39", stripeUrl: "https://buy.stripe.com/00w00dgnD9IA05681J9bO08" },
   { title: "Add a lyric video to any song", price: "$69", stripeUrl: "https://buy.stripe.com/fZucMZ2wNbQI0562Hp9bO09" },
 ];
@@ -620,19 +620,17 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 7,
-    title: "Wedding Custom Song",
-    client: "Private Client",
+    title: "WE JUST GOT MARRIED!!!!! — A Complete Wedding Album",
+    client: "CLOVER",
     category: "Music",
-    tags: ["Music", "Custom Song"],
-    description: "An original song written and produced for a couple's first dance, capturing their specific story and relationship.",
-    gradientFrom: "from-rose-950",
-    gradientTo: "to-dark-300",
-    accentColor: "rgba(251,113,133,0.12)",
-    challenge: "Write and produce a genuinely personal, professional-quality song — not a generic ballad — within a 3-week timeline.",
-    solution: "Conducted an in-depth brief to capture the couple's story, references, and emotional tone. Delivered a fully produced original track with two revision rounds.",
-    deliverables: ["Original song (3:30)", "Full production & mastering", "Lyric sheet", "High-quality WAV + MP3 delivery"],
-    testimonial: "We still listen to it every anniversary. Worth every penny.",
-    testimonialAuthor: "Private Client",
+    tags: ["Music", "Audio", "Client Work"],
+    description:
+      "An entire original wedding album — 9 tracks covering every moment of the night. The first dance, the bride's entrance, the groom's honor, the best man's liquid courage, a bouquet toss dance craze, the cake cutting, a celebration for solo guests, and the grand sendoff. Every song written and produced in-house. Because every wedding deserves its own soundtrack, not the same playlist everyone's heard a thousand times.",
+    spotifyTrackId: "0ZH9BZ3z8t3SJS5HDBpQzK",
+    externalUrl: "https://open.spotify.com/track/0ZH9BZ3z8t3SJS5HDBpQzK",
+    challenge: "Create a complete wedding music experience from scratch — 9 original tracks each capturing a different emotional beat of the night, all produced in-house with no outside collaborators.",
+    solution: "Wrote and produced all 9 songs to cover every key wedding moment: the first dance, entrances, toasts, the bouquet toss, cake cutting, and the grand sendoff. Each track has its own energy and emotional tone while feeling cohesive as a full album.",
+    deliverables: ["9 original songs written + produced", "First dance track ('The Way You Looked At Me')", "Full album distributed on Spotify", "Every moment of the night covered"],
   },
   {
     id: 8,

@@ -70,6 +70,11 @@ export default function MusicPage() {
                       Order Now
                     </a>
                   </div>
+                  {"upsellNote" in item && item.upsellNote && (
+                    <p className="border-t border-white/6 pt-3 text-[11px] leading-relaxed text-muted">
+                      {item.upsellNote}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
