@@ -182,10 +182,10 @@ export const audioPricing = [
 // ─── Music page ───────────────────────────────────────────────────────────────
 
 export const customSongPricing = [
-  { title: "Personal song (birthdays, anniversaries)", price: "$19" },
-  { title: "Wedding / proposal song", price: "$29" },
-  { title: "Brand anthem / corporate", price: "$39" },
-  { title: "Add a lyric video to any song", price: "$69" },
+  { title: "Personal song (birthdays, anniversaries)", price: "$19", stripeUrl: "https://buy.stripe.com/9B6aERb3jf2U6tu3Lt9bO06" },
+  { title: "Wedding / proposal song", price: "$29", stripeUrl: "https://buy.stripe.com/14A3cp3ARf2U2de1Dl9bO07" },
+  { title: "Brand anthem / corporate", price: "$39", stripeUrl: "https://buy.stripe.com/00w00dgnD9IA05681J9bO08" },
+  { title: "Add a lyric video to any song", price: "$69", stripeUrl: "https://buy.stripe.com/fZucMZ2wNbQI0562Hp9bO09" },
 ];
 
 export interface Artist {

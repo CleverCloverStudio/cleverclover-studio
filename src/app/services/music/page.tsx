@@ -57,10 +57,18 @@ export default function MusicPage() {
                   <p className="text-[11px] leading-relaxed text-muted">
                     Voice &amp; genre of your choice · 48-hour delivery
                   </p>
-                  <div className="mt-auto pt-2">
+                  <div className="mt-auto flex flex-col gap-3 pt-2">
                     <span className="font-display text-xl font-medium text-gold">
                       {item.price}
                     </span>
+                    <a
+                      href={item.stripeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-gold py-2 text-center text-sm font-semibold text-dark transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]"
+                    >
+                      Order Now
+                    </a>
                   </div>
                 </div>
               ))}
