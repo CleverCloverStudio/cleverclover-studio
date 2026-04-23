@@ -169,9 +169,6 @@ export default function MusicPage() {
                     {tier.description}
                   </p>
                   <div className="mt-auto pt-3">
-                    <span className="block text-[10px] font-semibold uppercase tracking-widest text-gold/60">
-                      starting at
-                    </span>
                     <span className="font-display text-xl font-medium text-gold">
                       {tier.price}
                     </span>

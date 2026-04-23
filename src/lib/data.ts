@@ -259,21 +259,20 @@ export const licensingTiers = [
   {
     title: "Personal use",
     subtitle: "YouTube, podcast, personal projects",
-    price: "$15",
-    description: "License a track for non-commercial use across personal content.",
+    price: "$4",
+    description: "High-quality, fully produced tracks ready to use — no subscription, no royalties, just one simple payment.",
   },
   {
     title: "Commercial use",
     subtitle: "Ads, brand content, paid campaigns",
-    price: "$75",
-    description: "Full commercial rights for monetized content and brand campaigns.",
+    price: "$7",
+    description: "High-quality, fully produced tracks ready to use — no subscription, no royalties, just one simple payment.",
   },
   {
     title: "Exclusive rights",
-    subtitle: "Own the track entirely",
-    price: "$500",
-    description:
-      "Full ownership transfer — the track is yours and pulled from public distribution.",
+    subtitle: "Full ownership, pulled from public distribution",
+    price: "$199",
+    description: "High-quality, fully produced tracks ready to use — no subscription, no royalties, just one simple payment.",
   },
 ];
 
