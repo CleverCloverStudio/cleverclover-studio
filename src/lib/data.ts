@@ -200,7 +200,7 @@ export interface Artist {
   spotifyTrackId: string;
   appleMusicUrl: string;
   youtubeMusicUrl: string;
-  beatportUrl: string;
+  beatportUrl?: string;
 }
 
 export const artists: Artist[] = [
@@ -245,6 +245,19 @@ export const artists: Artist[] = [
     appleMusicUrl: "https://music.apple.com/us/artist/trashcat/1863558303",
     youtubeMusicUrl: "https://music.youtube.com/channel/UCgp6tWjBdeyyySvk0Kv7igQ",
     beatportUrl: "https://www.beatport.com/artist/trashcat/703347",
+  },
+  {
+    id: "hml",
+    name: "Human Machine Learning",
+    tagline: "Where Flesh Meets Frequency",
+    genre: "Cyberpunk · EBM · Industrial EDM · Dark Electronic",
+    vibe: "Dark. Mechanical. Relentless. The soundtrack to a future that's already here.",
+    gradientFrom: "from-cyan-950",
+    gradientAccent: "rgba(34,211,238,0.15)",
+    spotifyArtistUrl: "https://open.spotify.com/artist/0YR7KLYxJTnypTT47HFFR1",
+    spotifyTrackId: "1OAzLsvEFfeqmnU481BEts",
+    appleMusicUrl: "https://music.apple.com/us/artist/human-machine-learning/1861921280",
+    youtubeMusicUrl: "https://music.youtube.com/channel/UCufROjpo6Urknj95E7ihcCg",
   },
 ];
 

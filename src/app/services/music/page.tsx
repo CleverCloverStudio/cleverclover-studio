@@ -132,7 +132,7 @@ export default function MusicPage() {
               className="mb-14"
             />
           </AnimatedReveal>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {artists.map((artist, i) => (
               <AnimatedReveal key={artist.id} delay={i * 0.1}>
                 <ArtistCard artist={artist} />

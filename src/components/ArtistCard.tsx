@@ -73,14 +73,16 @@ export default function ArtistCard({ artist }: { artist: Artist }) {
           >
             <YoutubeMusicIcon /> YT Music
           </a>
-          <a
-            href={artist.beatportUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 rounded-full border border-white/10 bg-dark-300 px-3 py-1.5 text-xs font-semibold text-muted-light transition-all duration-200 hover:border-[#02FF95]/40 hover:text-[#02FF95]"
-          >
-            <BeatportIcon /> Beatport
-          </a>
+          {artist.beatportUrl && (
+            <a
+              href={artist.beatportUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 rounded-full border border-white/10 bg-dark-300 px-3 py-1.5 text-xs font-semibold text-muted-light transition-all duration-200 hover:border-[#02FF95]/40 hover:text-[#02FF95]"
+            >
+              <BeatportIcon /> Beatport
+            </a>
+          )}
         </div>
       </div>
     </div>
