@@ -77,7 +77,6 @@ function TrackCard({ track }: { track: LibraryTrack }) {
 
   return (
     <div className="flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-dark-200 transition-all duration-300 hover:border-gold/20 hover:shadow-[0_0_40px_rgba(201,168,76,0.05)]">
-      {/* Track info */}
       <div className="px-5 pt-5 pb-3">
         <h3 className="font-display text-lg font-bold leading-snug text-cream">
           {track.title}
@@ -103,10 +102,8 @@ function TrackCard({ track }: { track: LibraryTrack }) {
         </div>
       </div>
 
-      {/* Spotify embed — lazy loaded */}
       <LazySpotifyEmbed trackId={track.spotifyTrackId} title={track.title} />
 
-      {/* License buttons */}
       <div className="px-5 pb-5 pt-4">
         <div className="flex gap-3">
           <a
@@ -127,10 +124,7 @@ function TrackCard({ track }: { track: LibraryTrack }) {
           </a>
         </div>
         <p className="mt-3 text-center text-xs text-muted">
-          <Link
-            href="/book"
-            className="transition-colors hover:text-cream"
-          >
+          <Link href="/book" className="transition-colors hover:text-cream">
             Need exclusive rights? Contact us
           </Link>
         </p>
@@ -143,6 +137,7 @@ export default function MusicLibraryGrid({ tracks }: { tracks: LibraryTrack[] })
   const [artistFilter, setArtistFilter] = useState("All");
   const [genreFilter, setGenreFilter] = useState("All");
   const [moodFilter, setMoodFilter] = useState("All");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const filteredTracks = useMemo(
     () =>
@@ -158,6 +153,15 @@ export default function MusicLibraryGrid({ tracks }: { tracks: LibraryTrack[] })
   const hasActiveFilter =
     artistFilter !== "All" || genreFilter !== "All" || moodFilter !== "All";
 
+  // Active filters as removable pills for the compact mobile bar
+  const activeFilters = (
+    [
+      artistFilter !== "All" ? { label: artistFilter, clear: () => setArtistFilter("All") } : null,
+      genreFilter !== "All" ? { label: genreFilter, clear: () => setGenreFilter("All") } : null,
+      moodFilter !== "All" ? { label: moodFilter, clear: () => setMoodFilter("All") } : null,
+    ] as const
+  ).filter((f): f is { label: string; clear: () => void } => f !== null);
+
   function clearFilters() {
     setArtistFilter("All");
     setGenreFilter("All");
@@ -166,49 +170,186 @@ export default function MusicLibraryGrid({ tracks }: { tracks: LibraryTrack[] })
 
   return (
     <>
-      {/* Sticky filter bar */}
+      {/* ── Sticky filter bar ───────────────────────────────────────────── */}
       <div className="sticky top-16 z-40 border-b border-white/5 bg-dark-100/95 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-6 py-5">
-          <div className="flex flex-col gap-3">
-            <FilterRow
-              label="Artist"
-              options={ARTISTS}
-              active={artistFilter}
-              onChange={setArtistFilter}
-            />
-            <FilterRow
-              label="Genre"
-              options={GENRES}
-              active={genreFilter}
-              onChange={setGenreFilter}
-            />
-            <FilterRow
-              label="Mood"
-              options={MOODS}
-              active={moodFilter}
-              onChange={setMoodFilter}
-            />
+
+        {/* ── Mobile: collapsible (hidden on md+) ─────────────────────── */}
+        <div className="md:hidden">
+
+          {/* Compact toggle row */}
+          <div
+            role="button"
+            tabIndex={0}
+            aria-expanded={mobileOpen}
+            aria-label="Toggle filter options"
+            onClick={() => setMobileOpen((o) => !o)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setMobileOpen((o) => !o);
+              }
+            }}
+            className="flex cursor-pointer select-none items-center gap-2.5 px-4 py-3.5"
+          >
+            {/* Filter icon */}
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              className="shrink-0 text-muted-light"
+              aria-hidden="true"
+            >
+              <path
+                d="M1 3h12M3 7h8M5 11h4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+
+            <span className="text-sm font-medium text-muted-light">
+              {hasActiveFilter ? "Filtered" : "Filter tracks"}
+            </span>
+
+            {/* Active filter pills — each tappable to remove without opening panel */}
+            {activeFilters.length > 0 && (
+              <div className="flex flex-1 items-center gap-1.5 overflow-hidden">
+                {activeFilters.map(({ label, clear }) => (
+                  <button
+                    key={label}
+                    onClick={(e) => { e.stopPropagation(); clear(); }}
+                    className="inline-flex shrink-0 items-center gap-1 rounded-full bg-gold px-2.5 py-0.5 text-[11px] font-semibold text-dark"
+                  >
+                    {label}
+                    <span aria-hidden="true">×</span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Count + chevron */}
+            <div className="ml-auto flex shrink-0 items-center gap-2">
+              <span className="text-[11px] text-muted">
+                {filteredTracks.length}/{tracks.length}
+              </span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                className={`shrink-0 text-muted transition-transform duration-200 ${
+                  mobileOpen ? "rotate-180" : ""
+                }`}
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 6l4 4 4-4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-between">
-            <p className="text-xs text-muted">
-              Showing{" "}
-              <span className="font-semibold text-cream">{filteredTracks.length}</span>{" "}
-              of {tracks.length} tracks
-            </p>
-            {hasActiveFilter && (
-              <button
-                onClick={clearFilters}
-                className="text-xs text-muted transition-colors hover:text-cream"
+          {/* Expandable filter panel */}
+          <AnimatePresence initial={false}>
+            {mobileOpen && (
+              <motion.div
+                key="mobile-panel"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
+                className="overflow-hidden"
               >
-                Clear filters ×
-              </button>
+                <div className="flex flex-col gap-3 border-t border-white/5 px-4 py-4">
+                  <FilterRow
+                    label="Artist"
+                    options={ARTISTS}
+                    active={artistFilter}
+                    onChange={(v) => { setArtistFilter(v); setMobileOpen(false); }}
+                  />
+                  <FilterRow
+                    label="Genre"
+                    options={GENRES}
+                    active={genreFilter}
+                    onChange={(v) => { setGenreFilter(v); setMobileOpen(false); }}
+                  />
+                  <FilterRow
+                    label="Mood"
+                    options={MOODS}
+                    active={moodFilter}
+                    onChange={(v) => { setMoodFilter(v); setMobileOpen(false); }}
+                  />
+                  <div className="flex items-center justify-between pt-1">
+                    <span className="text-xs text-muted">
+                      Showing{" "}
+                      <span className="font-semibold text-cream">
+                        {filteredTracks.length}
+                      </span>{" "}
+                      of {tracks.length} tracks
+                    </span>
+                    {hasActiveFilter && (
+                      <button
+                        onClick={() => { clearFilters(); setMobileOpen(false); }}
+                        className="text-xs text-muted transition-colors hover:text-cream"
+                      >
+                        Clear all ×
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
             )}
+          </AnimatePresence>
+        </div>
+
+        {/* ── Desktop: always visible (hidden below md) ───────────────── */}
+        <div className="hidden md:block">
+          <div className="mx-auto max-w-7xl px-6 py-5">
+            <div className="flex flex-col gap-3">
+              <FilterRow
+                label="Artist"
+                options={ARTISTS}
+                active={artistFilter}
+                onChange={setArtistFilter}
+              />
+              <FilterRow
+                label="Genre"
+                options={GENRES}
+                active={genreFilter}
+                onChange={setGenreFilter}
+              />
+              <FilterRow
+                label="Mood"
+                options={MOODS}
+                active={moodFilter}
+                onChange={setMoodFilter}
+              />
+            </div>
+            <div className="mt-4 flex items-center justify-between">
+              <p className="text-xs text-muted">
+                Showing{" "}
+                <span className="font-semibold text-cream">{filteredTracks.length}</span>{" "}
+                of {tracks.length} tracks
+              </p>
+              {hasActiveFilter && (
+                <button
+                  onClick={clearFilters}
+                  className="text-xs text-muted transition-colors hover:text-cream"
+                >
+                  Clear filters ×
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Track grid */}
+      {/* ── Track grid ──────────────────────────────────────────────────── */}
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2">
           <AnimatePresence mode="popLayout" initial={false}>
