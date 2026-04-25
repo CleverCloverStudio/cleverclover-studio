@@ -173,10 +173,27 @@ export default function MusicPage() {
                   <p className="text-sm leading-relaxed text-muted-light">
                     {tier.description}
                   </p>
-                  <div className="mt-auto pt-3">
+                  <div className="mt-auto flex flex-col gap-3 pt-3">
                     <span className="font-display text-xl font-medium text-gold">
                       {tier.price}
                     </span>
+                    {"stripeUrl" in tier && tier.stripeUrl ? (
+                      <a
+                        href={tier.stripeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full bg-gold py-2.5 text-center text-sm font-semibold text-dark transition-all duration-200 hover:bg-gold-light hover:shadow-[0_0_20px_rgba(201,168,76,0.25)]"
+                      >
+                        License a track →
+                      </a>
+                    ) : (
+                      <Link
+                        href="/book"
+                        className="rounded-full border border-white/15 py-2.5 text-center text-sm font-medium text-cream transition-all duration-200 hover:border-gold/40 hover:text-gold"
+                      >
+                        Contact us →
+                      </Link>
+                    )}
                   </div>
                 </div>
               </AnimatedReveal>

@@ -274,12 +274,14 @@ export const licensingTiers = [
     subtitle: "YouTube, podcast, personal projects",
     price: "$4",
     description: "High-quality, fully produced tracks ready to use — no subscription, no royalties, just one simple payment.",
+    stripeUrl: "https://buy.stripe.com/dRm00d7R76wo5pqgyf9bO0a",
   },
   {
     title: "Commercial use",
     subtitle: "Ads, brand content, paid campaigns",
     price: "$7",
     description: "High-quality, fully produced tracks ready to use — no subscription, no royalties, just one simple payment.",
+    stripeUrl: "https://buy.stripe.com/dRmbIV2wN4ogf004Px9bO0b",
   },
   {
     title: "Exclusive rights",

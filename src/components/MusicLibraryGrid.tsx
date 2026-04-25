@@ -69,9 +69,11 @@ function FilterRow({
   );
 }
 
+const PERSONAL_STRIPE = "https://buy.stripe.com/dRm00d7R76wo5pqgyf9bO0a";
+const COMMERCIAL_STRIPE = "https://buy.stripe.com/dRmbIV2wN4ogf004Px9bO0b";
+
 function TrackCard({ track }: { track: LibraryTrack }) {
-  const licenseUrl = (license: "personal" | "commercial") =>
-    `/book?type=licensing&license=${license}&track=${encodeURIComponent(track.title)}`;
+  const trackParam = `?track=${encodeURIComponent(track.title)}`;
 
   return (
     <div className="flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-dark-200 transition-all duration-300 hover:border-gold/20 hover:shadow-[0_0_40px_rgba(201,168,76,0.05)]">
@@ -108,13 +110,17 @@ function TrackCard({ track }: { track: LibraryTrack }) {
       <div className="px-5 pb-5 pt-4">
         <div className="flex gap-3">
           <a
-            href={licenseUrl("personal")}
+            href={`${PERSONAL_STRIPE}${trackParam}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 rounded-full border border-white/15 py-2.5 text-center text-sm font-medium text-cream transition-all duration-200 hover:border-gold/40 hover:text-gold"
           >
             Personal — $4
           </a>
           <a
-            href={licenseUrl("commercial")}
+            href={`${COMMERCIAL_STRIPE}${trackParam}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 rounded-full bg-gold py-2.5 text-center text-sm font-semibold text-dark transition-all duration-200 hover:bg-gold-light hover:shadow-[0_0_20px_rgba(201,168,76,0.25)]"
           >
             Commercial — $7
