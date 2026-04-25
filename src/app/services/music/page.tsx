@@ -184,7 +184,7 @@ export default function MusicPage() {
           </div>
           <AnimatedReveal delay={0.2}>
             <p className="mt-8 text-sm italic text-muted">
-              Browse available tracks or tell us what you need and we'll match you with the perfect sound.
+              <Link href="/library" className="text-gold transition-colors hover:text-gold-light">Browse available tracks</Link>{" "}or tell us what you need and we'll match you with the perfect sound.
             </p>
           </AnimatedReveal>
         </div>

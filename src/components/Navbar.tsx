@@ -8,6 +8,7 @@ const services = [
   { href: "/services/video", label: "Video Production" },
   { href: "/services/audio", label: "Audio Production" },
   { href: "/services/music", label: "Music" },
+  { href: "/library", label: "Music Library" },
   { href: "/services/web", label: "Website Design" },
 ];
 
