@@ -10,6 +10,22 @@ export const metadata: Metadata = {
   title: "Website Design",
   description:
     "Professional website design and development in Wix Studio or custom Next.js. Built for performance, designed to convert. Phoenix, AZ.",
+  openGraph: {
+    title: "Website Design | Clever Clover Studio",
+    description:
+      "Professional website design and development in Wix Studio or custom Next.js. Built for performance, designed to convert. Phoenix, AZ.",
+    url: "/services/web",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Design | Clever Clover Studio",
+    description:
+      "Professional website design and development in Wix Studio or custom Next.js. Built for performance, designed to convert. Phoenix, AZ.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 export default function WebPage() {

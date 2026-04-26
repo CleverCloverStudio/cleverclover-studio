@@ -9,6 +9,22 @@ export const metadata: Metadata = {
   title: "Work",
   description:
     "Selected projects across video production, audio production, music, and website design from Clever Clover Studio.",
+  openGraph: {
+    title: "Our Work | Clever Clover Studio",
+    description:
+      "Selected projects across video production, audio production, music, and website design from Clever Clover Studio.",
+    url: "/work",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Work | Clever Clover Studio",
+    description:
+      "Selected projects across video production, audio production, music, and website design from Clever Clover Studio.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 export default function WorkPage() {

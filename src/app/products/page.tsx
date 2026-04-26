@@ -9,6 +9,22 @@ export const metadata: Metadata = {
   title: "Digital Products",
   description:
     "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
+  openGraph: {
+    title: "Digital Products | Clever Clover Studio",
+    description:
+      "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
+    url: "/products",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Products | Clever Clover Studio",
+    description:
+      "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 export default function ProductsPage() {

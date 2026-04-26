@@ -12,6 +12,22 @@ export const metadata: Metadata = {
   title: "Music",
   description:
     "Custom songs for special moments, original artists distributed globally, and music licensing for creators and brands. Clever Clover Studio.",
+  openGraph: {
+    title: "Music | Clever Clover Studio",
+    description:
+      "Custom songs for special moments, original artists distributed globally, and music licensing for creators and brands. Clever Clover Studio.",
+    url: "/services/music",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Music | Clever Clover Studio",
+    description:
+      "Custom songs for special moments, original artists distributed globally, and music licensing for creators and brands. Clever Clover Studio.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 export default function MusicPage() {

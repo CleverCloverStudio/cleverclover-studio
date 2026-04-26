@@ -8,6 +8,22 @@ export const metadata: Metadata = {
   title: "Music Library",
   description:
     "Browse 29 original tracks from the Clever Clover catalog. Preview any song on Spotify and license it instantly for YouTube, podcasts, ads, or exclusive use.",
+  openGraph: {
+    title: "Music Library — License Tracks from $4",
+    description:
+      "Browse 29 original tracks. Filter by artist, genre, and mood. Preview instantly. License for personal or commercial use.",
+    url: "/library",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Music Library — License Tracks from $4",
+    description:
+      "Browse 29 original tracks. Filter by artist, genre, and mood. Preview instantly. License for personal or commercial use.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 export default function LibraryPage() {

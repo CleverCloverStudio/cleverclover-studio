@@ -19,7 +19,10 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const OG_IMAGE = { url: "/images/og-image.PNG", width: 1200, height: 630, alt: "Clever Clover Studio" };
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cleverclover.studio"),
   title: {
     default: "Clever Clover Studio — Creative Production in Phoenix, AZ",
     template: "%s | Clever Clover Studio",
@@ -34,6 +37,23 @@ export const metadata: Metadata = {
     "website design",
     "Phoenix Arizona",
   ],
+  openGraph: {
+    title: "Clever Clover Studio — Creative Production in Phoenix, AZ",
+    description:
+      "A full-service creative production studio based in Phoenix, Arizona. Video production, audio production, music, and website design — everything we create makes people feel something.",
+    url: "/",
+    siteName: "Clever Clover Studio",
+    images: [OG_IMAGE],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clever Clover Studio — Creative Production in Phoenix, AZ",
+    description:
+      "A full-service creative production studio based in Phoenix, Arizona. Video production, audio production, music, and website design — everything we create makes people feel something.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 export default function RootLayout({

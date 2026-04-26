@@ -8,6 +8,22 @@ export const metadata: Metadata = {
   title: "Packages",
   description:
     "Creative production packages for every stage — from quick-start projects to full brand builds. One studio, everything you need.",
+  openGraph: {
+    title: "Packages | Clever Clover Studio",
+    description:
+      "Creative production packages for every stage — from quick-start projects to full brand builds. One studio, everything you need.",
+    url: "/packages",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Packages | Clever Clover Studio",
+    description:
+      "Creative production packages for every stage — from quick-start projects to full brand builds. One studio, everything you need.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 const quickStarts = packages.filter((p) => p.tier === "quick");

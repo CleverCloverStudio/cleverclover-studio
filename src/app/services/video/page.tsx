@@ -13,6 +13,22 @@ export const metadata: Metadata = {
   title: "Video Production",
   description:
     "Cinematic video production in DaVinci Resolve — brand videos, social content, event recaps, lyric videos, and more. Based in Phoenix, AZ.",
+  openGraph: {
+    title: "Video Production | Clever Clover Studio",
+    description:
+      "Cinematic video production in DaVinci Resolve — brand videos, social content, event recaps, lyric videos, and more. Based in Phoenix, AZ.",
+    url: "/services/video",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Video Production | Clever Clover Studio",
+    description:
+      "Cinematic video production in DaVinci Resolve — brand videos, social content, event recaps, lyric videos, and more. Based in Phoenix, AZ.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 export default function VideoPage() {

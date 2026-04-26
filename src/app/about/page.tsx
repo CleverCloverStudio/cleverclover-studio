@@ -9,6 +9,22 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "The story behind Clever Clover Studio — one multidisciplinary creative professional building a full-service production studio in Phoenix, Arizona.",
+  openGraph: {
+    title: "About | Clever Clover Studio",
+    description:
+      "The story behind Clever Clover Studio — one multidisciplinary creative professional building a full-service production studio in Phoenix, Arizona.",
+    url: "/about",
+    siteName: "Clever Clover Studio",
+    images: [{ url: "/images/og-image.PNG" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Clever Clover Studio",
+    description:
+      "The story behind Clever Clover Studio — one multidisciplinary creative professional building a full-service production studio in Phoenix, Arizona.",
+    images: ["/images/og-image.PNG"],
+  },
 };
 
 const TOOL_CATEGORY_COLORS: Record<string, string> = {
