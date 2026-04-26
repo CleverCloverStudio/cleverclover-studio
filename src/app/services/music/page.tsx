@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Custom songs for special moments, original artists distributed globally, and music licensing for creators and brands. Clever Clover Studio.",
     url: "/services/music",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Music | Clever Clover Studio",
     description:
       "Custom songs for special moments, original artists distributed globally, and music licensing for creators and brands. Clever Clover Studio.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

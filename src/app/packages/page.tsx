@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Creative production packages for every stage — from quick-start projects to full brand builds. One studio, everything you need.",
     url: "/packages",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Packages | Clever Clover Studio",
     description:
       "Creative production packages for every stage — from quick-start projects to full brand builds. One studio, everything you need.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

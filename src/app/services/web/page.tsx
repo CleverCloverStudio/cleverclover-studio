@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Professional website design and development in Wix Studio or custom Next.js. Built for performance, designed to convert. Phoenix, AZ.",
     url: "/services/web",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Website Design | Clever Clover Studio",
     description:
       "Professional website design and development in Wix Studio or custom Next.js. Built for performance, designed to convert. Phoenix, AZ.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

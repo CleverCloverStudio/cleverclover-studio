@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Browse 29 original tracks. Filter by artist, genre, and mood. Preview instantly. License for personal or commercial use.",
     url: "/library",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Music Library — License Tracks from $4",
     description:
       "Browse 29 original tracks. Filter by artist, genre, and mood. Preview instantly. License for personal or commercial use.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

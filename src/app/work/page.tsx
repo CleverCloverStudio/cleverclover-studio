@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "Selected projects across video production, audio production, music, and website design from Clever Clover Studio.",
     url: "/work",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Our Work | Clever Clover Studio",
     description:
       "Selected projects across video production, audio production, music, and website design from Clever Clover Studio.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

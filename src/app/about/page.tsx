@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "The story behind Clever Clover Studio — one multidisciplinary creative professional building a full-service production studio in Phoenix, Arizona.",
     url: "/about",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "About | Clever Clover Studio",
     description:
       "The story behind Clever Clover Studio — one multidisciplinary creative professional building a full-service production studio in Phoenix, Arizona.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

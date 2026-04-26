@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Cinematic video production in DaVinci Resolve — brand videos, social content, event recaps, lyric videos, and more. Based in Phoenix, AZ.",
     url: "/services/video",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Video Production | Clever Clover Studio",
     description:
       "Cinematic video production in DaVinci Resolve — brand videos, social content, event recaps, lyric videos, and more. Based in Phoenix, AZ.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

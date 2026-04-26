@@ -19,10 +19,10 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const OG_IMAGE = { url: "/images/og-image.PNG", width: 1200, height: 630, alt: "Clever Clover Studio" };
+const OG_IMAGE = { url: "https://www.cleverclover.studio/images/og-image.PNG", width: 1200, height: 630, alt: "Clever Clover Studio" };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cleverclover.studio"),
+  metadataBase: new URL("https://www.cleverclover.studio"),
   title: {
     default: "Clever Clover Studio — Creative Production in Phoenix, AZ",
     template: "%s | Clever Clover Studio",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Clever Clover Studio — Creative Production in Phoenix, AZ",
     description:
       "A full-service creative production studio based in Phoenix, Arizona. Video production, audio production, music, and website design — everything we create makes people feel something.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Podcast editing, mixing, mastering, and sound design that makes your audience lean in. Professional audio production in Phoenix, AZ.",
     url: "/services/audio",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Audio Production | Clever Clover Studio",
     description:
       "Podcast editing, mixing, mastering, and sound design that makes your audience lean in. Professional audio production in Phoenix, AZ.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

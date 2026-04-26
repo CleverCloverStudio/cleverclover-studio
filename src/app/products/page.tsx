@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
     url: "/products",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Digital Products | Clever Clover Studio",
     description:
       "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 

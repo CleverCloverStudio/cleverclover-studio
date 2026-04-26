@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Start your creative project with Clever Clover Studio. Tell us what you need and we'll get back to you within 24 hours.",
     url: "/book",
     siteName: "Clever Clover Studio",
-    images: [{ url: "/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
     type: "website",
   },
   twitter: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Book a Project | Clever Clover Studio",
     description:
       "Start your creative project with Clever Clover Studio. Tell us what you need and we'll get back to you within 24 hours.",
-    images: ["/images/og-image.PNG"],
+    images: ["https://www.cleverclover.studio/images/og-image.PNG"],
   },
 };
 
