@@ -7,6 +7,7 @@ import ArtistCard from "@/components/ArtistCard";
 import CTASection from "@/components/CTASection";
 import { customSongPricing, musicVideoPricing, artists, licensingTiers } from "@/lib/data";
 import { PricingGrid } from "@/components/PricingCard";
+import VoiceSelector from "@/components/VoiceSelector";
 
 export const metadata: Metadata = {
   title: "Music",
@@ -55,14 +56,19 @@ export default function MusicPage() {
             </div>
           </AnimatedReveal>
 
-          <AnimatedReveal delay={0.08} className="mt-10">
-            <p className="text-base font-medium text-muted-light">
-              Choose your voice. Choose your genre. Delivered in{" "}
-              <span className="font-semibold text-gold">48 hours.</span>
+          <AnimatedReveal delay={0.08} className="mt-12">
+            <h3 className="font-display text-xl font-bold text-cream">Choose your voice.</h3>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-light">
+              Every voice is a real, original voice model — not a generic AI voice. Preview each
+              one and pick the sound that fits your song.
             </p>
           </AnimatedReveal>
 
-          <AnimatedReveal delay={0.1} className="mt-6">
+          <AnimatedReveal delay={0.12} className="mt-6">
+            <VoiceSelector />
+          </AnimatedReveal>
+
+          <AnimatedReveal delay={0.16} className="mt-10">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {customSongPricing.map((item) => (
                 <div
