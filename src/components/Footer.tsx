@@ -34,30 +34,36 @@ export default function Footer() {
               Arizona. Everything we create makes people feel something.
             </p>
             <a
-              href="mailto:hello@cleverclover.studio"
+              href="mailto:bryan@clovervoiceover.com"
               className="mt-4 inline-block text-sm text-gold transition-colors hover:text-gold-light"
             >
-              hello@cleverclover.studio
+              bryan@clovervoiceover.com
             </a>
 
             {/* Social links */}
             <div className="mt-6 flex items-center gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/bryan7737/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted transition-colors hover:text-cream"
                 aria-label="Instagram"
               >
                 <InstagramIcon />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@RadiaRadio"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted transition-colors hover:text-cream"
                 aria-label="YouTube"
               >
                 <YoutubeIcon />
               </a>
               <a
-                href="#"
+                href="https://open.spotify.com/artist/6MFKPgbFJDAR91KAx8wxuq"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted transition-colors hover:text-cream"
                 aria-label="Spotify"
               >
