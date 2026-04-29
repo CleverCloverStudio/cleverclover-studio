@@ -76,10 +76,10 @@ export default function BookPage() {
                     Prefer email?
                   </p>
                   <a
-                    href="mailto:hello@cleverclover.studio"
+                    href="mailto:bryan@clovervoiceover.com"
                     className="text-sm text-cream transition-colors hover:text-gold"
                   >
-                    hello@cleverclover.studio
+                    bryan@clovervoiceover.com
                   </a>
                 </div>
 
