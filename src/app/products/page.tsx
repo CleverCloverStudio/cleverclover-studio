@@ -108,16 +108,23 @@ export default function ProductsPage() {
                   <p className="text-base leading-relaxed text-muted-light">
                     {godModeGuide.description}
                   </p>
-                  <div className="flex items-center gap-4 pt-2">
-                    <span className="font-display text-3xl font-bold text-gold">
-                      {godModeGuide.price}
-                    </span>
-                    <button
-                      disabled
-                      className="rounded-full border border-white/15 bg-dark-300 px-6 py-2.5 text-sm font-semibold text-muted-light opacity-70 cursor-not-allowed"
+                  <div className="flex flex-col gap-3 pt-2">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-display text-3xl font-bold text-gold">
+                        {godModeGuide.price}
+                      </span>
+                      <span className="text-xs font-medium text-muted">
+                        {godModeGuide.formatLine}
+                      </span>
+                    </div>
+                    <a
+                      href={godModeGuide.gumroadUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-fit items-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-semibold text-dark transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_30px_rgba(201,168,76,0.3)]"
                     >
-                      Coming soon
-                    </button>
+                      Buy the Guide — $39
+                    </a>
                   </div>
                 </div>
 
@@ -139,6 +146,11 @@ export default function ProductsPage() {
                 </div>
               </div>
             </div>
+          </AnimatedReveal>
+          <AnimatedReveal delay={0.15}>
+            <p className="mt-6 text-sm italic text-muted">
+              Built from 8,000+ songs across every genre. This is the system behind the music.
+            </p>
           </AnimatedReveal>
         </div>
       </section>

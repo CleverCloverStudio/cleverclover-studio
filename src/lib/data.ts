@@ -753,9 +753,9 @@ export const promptPacks = [
 
 export const godModeGuide = {
   title: "The God-Mode Guide",
-  subtitle: "The complete methodology",
+  subtitle: "AI Music Production with Suno",
   description:
-    "Not just a list of prompts — a complete framework for thinking about AI music production. Learn how to engineer genre conventions, layer instrumentation, direct vocal styles, and consistently produce tracks that sound professionally mastered rather than AI-generated.",
+    "The complete methodology behind producing radio-ready tracks on Suno — refined over 8,000+ songs. Not a prompt list. A system for understanding why certain prompts work and how to consistently produce tracks that sound professionally produced. Covers style prompt construction, genre strategies, vocal control, production terminology, Suno Studio editing, and the mindset shift from generating songs to producing music.",
   whatYouGet: [
     "The full God-Mode methodology, explained",
     "How to structure prompts for consistent, repeatable results",
@@ -765,7 +765,9 @@ export const godModeGuide = {
     "Production quality engineering",
     "Refined across 8,000+ real generations",
   ],
-  price: "$49 – $79",
+  price: "$39",
+  formatLine: "PDF · Instant delivery",
+  gumroadUrl: "https://cloverbryan.gumroad.com/l/usyno",
 };
 
 // ─── Music Library page ───────────────────────────────────────────────────────
