@@ -708,52 +708,10 @@ export const productStats = [
   { value: "Radio-Ready", label: "Results" },
 ];
 
-export const promptPacks = [
-  {
-    genre: "Modern Country Hits",
-    description: "Polished, contemporary country with strong hooks and radio-ready production.",
-    price: "$29",
-  },
-  {
-    genre: "Lo-Fi & Chill",
-    description: "Warm, textured beats perfect for focus, study, and relaxed atmospheres.",
-    price: "$19",
-  },
-  {
-    genre: "Cinematic Scores",
-    description: "Orchestral and hybrid cinematic prompts for trailers, films, and brand content.",
-    price: "$49",
-  },
-  {
-    genre: "Pop Anthems",
-    description: "Huge, hook-driven pop with polished production and emotional impact.",
-    price: "$29",
-  },
-  {
-    genre: "R&B / Soul",
-    description: "Smooth, soulful, and emotionally layered. Ranges from classic soul to modern R&B.",
-    price: "$29",
-  },
-  {
-    genre: "Hip-Hop Beats",
-    description: "From boom-bap to trap to melodic rap — versatile prompts for any hip-hop style.",
-    price: "$29",
-  },
-  {
-    genre: "Electronic / EDM",
-    description: "High-energy electronic production across house, techno, synthwave, and beyond.",
-    price: "$29",
-  },
-  {
-    genre: "Acoustic & Singer-Songwriter",
-    description: "Intimate, authentic acoustic music that feels genuinely human and personal.",
-    price: "$19",
-  },
-];
-
 export const godModeGuide = {
   title: "The God-Mode Guide",
   subtitle: "AI Music Production with Suno",
+  tag: "The Full System",
   description:
     "The complete methodology behind producing radio-ready tracks on Suno — refined over 8,000+ songs. Not a prompt list. A system for understanding why certain prompts work and how to consistently produce tracks that sound professionally produced. Covers style prompt construction, genre strategies, vocal control, production terminology, Suno Studio editing, and the mindset shift from generating songs to producing music.",
   whatYouGet: [
@@ -769,6 +727,91 @@ export const godModeGuide = {
   formatLine: "PDF · Instant delivery",
   gumroadUrl: "https://cloverbryan.gumroad.com/l/usyno",
 };
+
+export type ProductStatus = "live" | "coming-soon";
+
+export interface GenrePromptPack {
+  title: string;
+  description: string;
+  price: string;
+  gumroadUrl: string | null;
+  status: ProductStatus;
+  tag: string;
+}
+
+export const genrePromptPacks: GenrePromptPack[] = [
+  {
+    title: "Cinematic / Trailer / Score Vol. 01",
+    description:
+      "8 cinema-grade prompts for blockbuster trailers, dark thrillers, fantasy scores, intimate themes, and cyberpunk noir. Plus 2 locked preview prompts that only the Guide can unlock.",
+    price: "$7",
+    gumroadUrl: "https://cloverbryan.gumroad.com/l/jzvxz",
+    status: "live",
+    tag: "Available Now",
+  },
+  {
+    title: "Hip-Hop / Trap",
+    description: "",
+    price: "$7",
+    gumroadUrl: null,
+    status: "coming-soon",
+    tag: "Coming Soon",
+  },
+  {
+    title: "Lo-Fi / Chill",
+    description: "",
+    price: "$7",
+    gumroadUrl: null,
+    status: "coming-soon",
+    tag: "Coming Soon",
+  },
+  {
+    title: "Country / Americana",
+    description: "",
+    price: "$7",
+    gumroadUrl: null,
+    status: "coming-soon",
+    tag: "Coming Soon",
+  },
+  {
+    title: "Electronic / EDM",
+    description: "",
+    price: "$7",
+    gumroadUrl: null,
+    status: "coming-soon",
+    tag: "Coming Soon",
+  },
+];
+
+export interface Bundle {
+  title: string;
+  description: string;
+  price: string;
+  gumroadUrl: string | null;
+  status: ProductStatus;
+  tag?: string;
+  featured?: boolean;
+}
+
+export const bundles: Bundle[] = [
+  {
+    title: "3-Pack Bundle",
+    description: "Any three genre prompt packs at a discount.",
+    price: "$15 (saves $6)",
+    gumroadUrl: null,
+    status: "coming-soon",
+  },
+  {
+    title: "The God-Mode Collection",
+    description:
+      "The complete Guide plus every prompt pack — current and future. New packs added to your collection automatically.",
+    price: "$49",
+    gumroadUrl: null,
+    status: "coming-soon",
+    tag: "Best Value",
+    featured: true,
+  },
+];
 
 // ─── Music Library page ───────────────────────────────────────────────────────
 
