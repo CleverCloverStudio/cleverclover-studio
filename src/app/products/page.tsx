@@ -201,7 +201,7 @@ export default function ProductsPage() {
                           {pack.title}
                         </h3>
                         {pack.subtitle && (
-                          <p className="mt-0.5 text-xs font-medium text-gold/60">
+                          <p className="mt-0.5 font-display text-sm font-semibold text-cream">
                             {pack.subtitle}
                           </p>
                         )}
