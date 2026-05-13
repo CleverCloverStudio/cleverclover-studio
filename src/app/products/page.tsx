@@ -196,9 +196,16 @@ export default function ProductsPage() {
                 {pack.status === "live" ? (
                   <div className="flex h-full flex-col gap-5 rounded-xl border border-gold/20 bg-dark-200 p-6 transition-all duration-300 hover:border-gold/30 hover:bg-dark-300">
                     <div className="flex items-start justify-between gap-3">
-                      <h3 className="font-display text-lg font-semibold text-cream">
-                        {pack.title}
-                      </h3>
+                      <div>
+                        <h3 className="font-display text-lg font-semibold text-cream">
+                          {pack.title}
+                        </h3>
+                        {pack.subtitle && (
+                          <p className="mt-0.5 text-xs font-medium text-gold/60">
+                            {pack.subtitle}
+                          </p>
+                        )}
+                      </div>
                       <span className="shrink-0 rounded-full border border-gold/30 bg-gold/10 px-2.5 py-1 text-xs font-semibold text-gold">
                         {pack.tag}
                       </span>

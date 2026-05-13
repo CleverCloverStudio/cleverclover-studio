@@ -732,6 +732,7 @@ export type ProductStatus = "live" | "coming-soon";
 
 export interface GenrePromptPack {
   title: string;
+  subtitle?: string;
   description: string;
   price: string;
   gumroadUrl: string | null;
@@ -751,11 +752,13 @@ export const genrePromptPacks: GenrePromptPack[] = [
   },
   {
     title: "Hip-Hop / Trap",
-    description: "",
+    subtitle: "Vol. 02",
+    description:
+      "8 engineered prompts for the genre Suno gets wrong most. Atlanta Trap, Boom-Bap, Drill, Phonk, and more. Plus 2 locked previews and 2 bundle-exclusive bonus prompts.",
     price: "$7",
-    gumroadUrl: null,
-    status: "coming-soon",
-    tag: "Coming Soon",
+    gumroadUrl: "https://cloverbryan.gumroad.com/l/hip-hop-suno-prompts",
+    status: "live",
+    tag: "Available Now",
   },
   {
     title: "Lo-Fi / Chill",
