@@ -703,7 +703,7 @@ export const videoSamples = workProjects.filter((p) => [11, 12, 13].includes(p.i
 // ─── Products page ────────────────────────────────────────────────────────────
 
 export const productStats = [
-  { value: "8,000+", label: "Songs Generated" },
+  { value: "9,000+", label: "Songs Generated" },
   { value: "2+ Years", label: "Daily Production" },
   { value: "Radio-Ready", label: "Results" },
 ];
@@ -801,7 +801,8 @@ export interface Bundle {
 export const bundles: Bundle[] = [
   {
     title: "3-Pack Bundle",
-    description: "Any three genre prompt packs at a discount.",
+    description:
+      "All three current volumes of the Suno prompt pack series — Cinematic, Hip-Hop / Trap, and Electronic / EDM. Plus four bundle-exclusive bonus prompts you can't get any other way.",
     price: "$15 (saves $6)",
     gumroadUrl: null,
     status: "coming-soon",
@@ -809,7 +810,7 @@ export const bundles: Bundle[] = [
   {
     title: "The God-Mode Collection",
     description:
-      "The complete Guide plus every prompt pack — current and future. New packs added to your collection automatically.",
+      "The full Suno God-Mode system. The complete Guide ($39 alone) plus every current volume of the prompt pack series. Every locked preview unlocked. Every bundle-exclusive bonus included. New volumes added automatically as they release.",
     price: "$49",
     gumroadUrl: null,
     status: "coming-soon",

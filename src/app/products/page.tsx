@@ -4,6 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import EmailSignup from "@/components/EmailSignup";
 import { productStats, genrePromptPacks, godModeGuide, bundles } from "@/lib/data";
+import PlatformTag from "@/components/PlatformTag";
 
 export const metadata: Metadata = {
   title: "Digital Products",
@@ -47,10 +48,10 @@ export default function ProductsPage() {
               Digital Products
             </span>
             <h1 className="font-display text-5xl font-bold leading-tight text-cream md:text-6xl lg:text-7xl">
-              The tools behind the music.
+              Engineered Suno Prompts.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-light md:text-xl">
-              Refined over 8,000 songs.
+              Style prompts and a complete system for producing radio-ready music on Suno. The tools behind the songs.
             </p>
           </AnimatedReveal>
         </div>
@@ -106,9 +107,12 @@ export default function ProductsPage() {
                 {/* Left column */}
                 <div className="flex flex-col gap-6">
                   <div>
-                    <span className="rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
-                      {godModeGuide.tag}
-                    </span>
+                    <PlatformTag />
+                    <div className="mt-3">
+                      <span className="rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
+                        {godModeGuide.tag}
+                      </span>
+                    </div>
                     <h2 className="mt-5 font-display text-4xl font-bold text-cream md:text-5xl">
                       {godModeGuide.title}
                     </h2>
@@ -184,8 +188,8 @@ export default function ProductsPage() {
           <AnimatedReveal>
             <SectionHeading
               label="Prompt Packs"
-              title="Genre Prompt Packs."
-              subtitle="Each pack contains 8 engineered prompts with full X-Ray breakdowns — key, tempo, motif, structure, and copy-paste ready Suno prompts."
+              title="Suno Prompt Packs by Genre."
+              subtitle="Style prompts engineered for Suno — copy-paste ready. Each pack covers one genre family in forensic depth: key, tempo, motif, structure, vocal direction, and the production rationale behind every choice."
               className="mb-12"
             />
           </AnimatedReveal>
@@ -195,6 +199,7 @@ export default function ProductsPage() {
               <AnimatedReveal key={pack.title} delay={i * 0.06}>
                 {pack.status === "live" ? (
                   <div className="flex h-full flex-col gap-5 rounded-xl border border-gold/20 bg-dark-200 p-6 transition-all duration-300 hover:border-gold/30 hover:bg-dark-300">
+                    <PlatformTag />
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h3 className="font-display text-lg font-semibold text-cream">
@@ -229,6 +234,7 @@ export default function ProductsPage() {
                   </div>
                 ) : (
                   <div className="flex h-full flex-col gap-4 rounded-xl border border-white/5 bg-dark-200/40 p-6 opacity-50">
+                    <PlatformTag />
                     <div className="flex items-start justify-between gap-3">
                       <h3 className="font-display text-lg font-semibold text-muted-light">
                         {pack.title}
@@ -251,7 +257,7 @@ export default function ProductsPage() {
           <AnimatedReveal>
             <SectionHeading
               label="Bundles"
-              title="Save with bundles."
+              title="Save with Suno bundles."
               className="mb-12"
             />
           </AnimatedReveal>
@@ -266,6 +272,7 @@ export default function ProductsPage() {
                       : "border border-white/8 bg-dark-200"
                   }`}
                 >
+                  <PlatformTag />
                   <div className="flex items-start justify-between gap-3">
                     <h3 className="font-display text-xl font-bold text-cream">
                       {bundle.title}
