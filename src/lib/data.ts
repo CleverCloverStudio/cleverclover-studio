@@ -761,6 +761,16 @@ export const genrePromptPacks: GenrePromptPack[] = [
     tag: "Available Now",
   },
   {
+    title: "Electronic / EDM",
+    subtitle: "Vol. 03",
+    description:
+      "8 engineered prompts for the three EDM movements that matter in 2026. Afro House, 3-Step, Melodic Techno, Speed Garage, Hard Techno, and more. Plus 2 locked previews and 2 bundle-exclusive bonus prompts.",
+    price: "$7",
+    gumroadUrl: "https://cloverbryan.gumroad.com/l/edm-suno-prompts",
+    status: "live",
+    tag: "Available Now",
+  },
+  {
     title: "Lo-Fi / Chill",
     description: "",
     price: "$7",
@@ -770,14 +780,6 @@ export const genrePromptPacks: GenrePromptPack[] = [
   },
   {
     title: "Country / Americana",
-    description: "",
-    price: "$7",
-    gumroadUrl: null,
-    status: "coming-soon",
-    tag: "Coming Soon",
-  },
-  {
-    title: "Electronic / EDM",
     description: "",
     price: "$7",
     gumroadUrl: null,
