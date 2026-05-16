@@ -794,6 +794,7 @@ export interface Bundle {
   price: string;
   gumroadUrl: string | null;
   status: ProductStatus;
+  cta?: string;
   tag?: string;
   featured?: boolean;
 }
@@ -804,16 +805,18 @@ export const bundles: Bundle[] = [
     description:
       "All three current volumes of the Suno prompt pack series — Cinematic, Hip-Hop / Trap, and Electronic / EDM. Plus four bundle-exclusive bonus prompts you can't get any other way.",
     price: "$15 (saves $6)",
-    gumroadUrl: null,
-    status: "coming-soon",
+    gumroadUrl: "https://cloverbryan.gumroad.com/l/suno-god-mode-3-pack",
+    status: "live",
+    cta: "Get the Bundle — $15",
   },
   {
     title: "The God-Mode Collection",
     description:
       "The full Suno God-Mode system. The complete Guide ($39 alone) plus every current volume of the prompt pack series. Every locked preview unlocked. Every bundle-exclusive bonus included. New volumes added automatically as they release.",
     price: "$49",
-    gumroadUrl: null,
-    status: "coming-soon",
+    gumroadUrl: "https://cloverbryan.gumroad.com/l/god-mode-collection",
+    status: "live",
+    cta: "Get the Collection — $49",
     tag: "Best Value",
     featured: true,
   },

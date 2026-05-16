@@ -290,12 +290,23 @@ export default function ProductsPage() {
                     <span className="font-display text-2xl font-bold text-gold">
                       {bundle.price}
                     </span>
-                    <button
-                      disabled
-                      className="rounded-full border border-white/10 bg-dark-300 px-5 py-2 text-xs font-semibold text-muted opacity-60 cursor-not-allowed"
-                    >
-                      Coming Soon
-                    </button>
+                    {bundle.status === "live" ? (
+                      <a
+                        href={bundle.gumroadUrl!}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full bg-gold px-4 py-2 text-xs font-semibold text-dark transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]"
+                      >
+                        {bundle.cta}
+                      </a>
+                    ) : (
+                      <button
+                        disabled
+                        className="rounded-full border border-white/10 bg-dark-300 px-5 py-2 text-xs font-semibold text-muted opacity-60 cursor-not-allowed"
+                      >
+                        Coming Soon
+                      </button>
+                    )}
                   </div>
                 </div>
               </AnimatedReveal>
