@@ -705,7 +705,7 @@ export const videoSamples = workProjects.filter((p) => [11, 12, 13].includes(p.i
 export const productStats = [
   { value: "9,000+", label: "Songs Generated" },
   { value: "2+ Years", label: "Daily Production" },
-  { value: "Radio-Ready", label: "Results" },
+  { value: "310+", label: "Engineered Assets" },
 ];
 
 export const godModeGuide = {
@@ -744,7 +744,7 @@ export const genrePromptPacks: GenrePromptPack[] = [
   {
     title: "Cinematic / Trailer / Score Vol. 01",
     description:
-      "8 cinema-grade prompts for blockbuster trailers, dark thrillers, fantasy scores, intimate themes, and cyberpunk noir. Plus 2 locked preview prompts that only the Guide can unlock.",
+      "80+ engineered assets across 8 scoring systems. Blockbuster trailers, dark thrillers, fantasy scores, intimate themes, and cyberpunk noir. Plus 2 locked previews the Guide unlocks.",
     price: "$7",
     gumroadUrl: "https://cloverbryan.gumroad.com/l/jzvxz",
     status: "live",
@@ -754,7 +754,7 @@ export const genrePromptPacks: GenrePromptPack[] = [
     title: "Hip-Hop / Trap",
     subtitle: "Vol. 02",
     description:
-      "8 engineered prompts for the genre Suno gets wrong most. Atlanta Trap, Boom-Bap, Drill, Phonk, and more. Plus 2 locked previews and 2 bundle-exclusive bonus prompts.",
+      "100+ engineered assets for the genre Suno gets wrong most. Atlanta Trap, Boom-Bap, Drill, Phonk, and more. Plus 2 locked previews and 2 bundle-exclusive bonus prompts.",
     price: "$7",
     gumroadUrl: "https://cloverbryan.gumroad.com/l/hip-hop-suno-prompts",
     status: "live",
@@ -764,7 +764,7 @@ export const genrePromptPacks: GenrePromptPack[] = [
     title: "Electronic / EDM",
     subtitle: "Vol. 03",
     description:
-      "8 engineered prompts for the three EDM movements that matter in 2026. Afro House, 3-Step, Melodic Techno, Speed Garage, Hard Techno, and more. Plus 2 locked previews and 2 bundle-exclusive bonus prompts.",
+      "130+ engineered assets for the three EDM movements that matter in 2026. Afro House, 3-Step, Melodic Techno, Speed Garage, Hard Techno, and more. Plus 2 locked previews, 2 bundle bonuses, and the Five Mechanics reference.",
     price: "$7",
     gumroadUrl: "https://cloverbryan.gumroad.com/l/edm-suno-prompts",
     status: "live",
@@ -803,8 +803,8 @@ export const bundles: Bundle[] = [
   {
     title: "3-Pack Bundle",
     description:
-      "All three current volumes of the Suno prompt pack series — Cinematic, Hip-Hop / Trap, and Electronic / EDM. Plus four bundle-exclusive bonus prompts you can't get any other way.",
-    price: "$15 (saves $6)",
+      "310+ engineered assets across all three volumes — Cinematic, Hip-Hop / Trap, and Electronic / EDM. Plus four bundle-exclusive bonus prompts you can't get any other way.",
+    price: "$15 — $21 separately",
     gumroadUrl: "https://cloverbryan.gumroad.com/l/suno-god-mode-3-pack",
     status: "live",
     cta: "Get the Bundle — $15",

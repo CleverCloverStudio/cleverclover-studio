@@ -51,7 +51,7 @@ export default function ProductsPage() {
               Engineered Suno Prompts.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-light md:text-xl">
-              Style prompts and a complete system for producing radio-ready music on Suno. The tools behind the songs.
+              Genre-specific prompt packs and the complete God Mode production system. 310+ engineered assets built on real music theory — the depth behind every song on Suno that actually feels intentional. The tools behind the songs.
             </p>
           </AnimatedReveal>
         </div>
@@ -257,7 +257,7 @@ export default function ProductsPage() {
           <AnimatedReveal>
             <SectionHeading
               label="Bundles"
-              title="Save with Suno bundles."
+              title="Two ways to go all in."
               className="mb-12"
             />
           </AnimatedReveal>
