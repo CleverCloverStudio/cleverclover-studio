@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedReveal from "@/components/AnimatedReveal";
 import CTASection from "@/components/CTASection";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { tools } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -45,6 +46,19 @@ export default function AboutPage() {
         headline="One studio. Every skill."
         subheadline="The story behind Clever Clover — and why one person can build what used to take an entire team."
       />
+
+      {/* Brand intro video */}
+      <section className="bg-dark-100 pb-0 pt-10">
+        <div className="mx-auto max-w-7xl px-6">
+          <AnimatedReveal>
+            <YouTubeEmbed
+              videoId="FSRMmjUl5qE"
+              title="Welcome to Clever Clover Studio"
+              ariaLabel="Play brand intro video"
+            />
+          </AnimatedReveal>
+        </div>
+      </section>
 
       {/* The Story */}
       <section className="bg-dark-100 py-24">
