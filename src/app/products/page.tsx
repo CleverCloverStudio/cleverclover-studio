@@ -1,30 +1,32 @@
-import type { Metadata } from "next";
+import Script from "next/script";
 import AnimatedReveal from "@/components/AnimatedReveal";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import EmailSignup from "@/components/EmailSignup";
 import { productStats, genrePromptPacks, godModeGuide, bundles } from "@/lib/data";
 import PlatformTag from "@/components/PlatformTag";
+import SunoLongformIntro from "@/components/SunoLongformIntro";
 
-export const metadata: Metadata = {
-  title: "Digital Products",
-  description:
-    "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
+export const metadata = {
+  title: "Suno AI Prompt Packs — Engineered Style Prompts for Suno v5 | Clever Clover Studio",
+  description: "Suno AI prompt packs engineered by a producer with 9,000+ Suno songs published. Cinematic, hip-hop, EDM — each prompt X-rayed by key, mode, motif, and exclusion strategy. $7 per pack, $15 for the bundle.",
+  keywords: "suno prompts, suno ai prompts, suno prompt pack, suno ai prompt pack, suno style prompts, suno prompt guide, suno v5 prompts",
   openGraph: {
-    title: "Digital Products | Clever Clover Studio",
-    description:
-      "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
-    url: "/products",
+    title: "Suno AI Prompt Packs — Engineered, Not Collected",
+    description: "Architectural prompting for Suno v5. 310+ engineered assets across cinematic, hip-hop, and EDM. Built by a producer 9,000 Suno songs deep.",
+    url: "https://www.cleverclover.studio/products",
     siteName: "Clever Clover Studio",
-    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG" }],
+    images: [{ url: "https://www.cleverclover.studio/images/og-image.PNG", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Products | Clever Clover Studio",
-    description:
-      "AI music production prompt packs, guides, and templates refined over 8,000 songs. God-Mode Suno prompts that produce radio-ready results.",
+    title: "Suno AI Prompt Packs — Engineered, Not Collected",
+    description: "Architectural prompting for Suno v5. Cinematic, hip-hop, EDM. $7 per pack.",
     images: ["https://www.cleverclover.studio/images/og-image.PNG"],
+  },
+  alternates: {
+    canonical: "https://www.cleverclover.studio/products",
   },
 };
 
@@ -315,6 +317,9 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* ─── Longform SEO intro ───────────────────────────────────── */}
+      <SunoLongformIntro />
+
       {/* ─── Section 4: Coming Soon — Production Templates ────────── */}
       <section className="bg-dark-100 py-24">
         <div className="mx-auto max-w-7xl px-6">
@@ -373,6 +378,127 @@ export default function ProductsPage() {
         secondaryText="See our music services"
         secondaryHref="/services/music"
       />
+
+      <Script id="products-schema" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "ItemList",
+              "name": "Suno AI Prompt Packs",
+              "description": "Engineered Suno AI style prompt packs by Clever Clover Studio. Cinematic, hip-hop, and EDM prompt packs plus the God Mode Bible reference guide.",
+              "url": "https://www.cleverclover.studio/products",
+              "numberOfItems": 6,
+              "itemListElement": [
+                {
+                  "@type": "Product",
+                  "position": 1,
+                  "name": "The Suno God-Mode Prompt Bible",
+                  "description": "The complete reference for Suno AI music production. Vocal control, genre tags, structural tagging, pipe stacking, troubleshooting, and copy-paste templates. Compatible with Suno v5 and v5.5.",
+                  "url": "https://cloverbryan.gumroad.com/l/usyno",
+                  "image": "https://www.cleverclover.studio/images/og-image.PNG",
+                  "brand": { "@type": "Brand", "name": "Clever Clover Studio" },
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "39.00",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://cloverbryan.gumroad.com/l/usyno"
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "position": 2,
+                  "name": "Cinematic Suno Prompts — Vol. 01",
+                  "description": "80+ engineered God Mode assets for cinematic, trailer, and score production in Suno AI. Heroic trailers, dark thrillers, fantasy scores, cinematic battle anthems, and more.",
+                  "url": "https://cloverbryan.gumroad.com/l/cinematic-trailer-score-suno-prompts",
+                  "image": "https://www.cleverclover.studio/images/og-image.PNG",
+                  "brand": { "@type": "Brand", "name": "Clever Clover Studio" },
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "7.00",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://cloverbryan.gumroad.com/l/cinematic-trailer-score-suno-prompts"
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "position": 3,
+                  "name": "Hip-Hop & Trap Suno Prompts — Vol. 02",
+                  "description": "100+ engineered God Mode assets for hip-hop and trap production in Suno AI. Atlanta trap, boom-bap, melodic trap, R&B hybrid, drill, rage, conscious hip-hop, phonk.",
+                  "url": "https://cloverbryan.gumroad.com/l/hip-hop-suno-prompts",
+                  "image": "https://www.cleverclover.studio/images/og-image.PNG",
+                  "brand": { "@type": "Brand", "name": "Clever Clover Studio" },
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "7.00",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://cloverbryan.gumroad.com/l/hip-hop-suno-prompts"
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "position": 4,
+                  "name": "Electronic & EDM Suno Prompts — Vol. 03",
+                  "description": "130+ engineered God Mode assets for electronic and EDM production in Suno AI. Maps the three EDM movements that matter in 2026 — Afro House, 3-Step, Melodic Techno, Speed Garage, Hard Techno, and more.",
+                  "url": "https://cloverbryan.gumroad.com/l/edm-suno-prompts",
+                  "image": "https://www.cleverclover.studio/images/og-image.PNG",
+                  "brand": { "@type": "Brand", "name": "Clever Clover Studio" },
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "7.00",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://cloverbryan.gumroad.com/l/edm-suno-prompts"
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "position": 5,
+                  "name": "God Mode Suno Prompt Bundle — All 3 Volumes",
+                  "description": "All three volumes of the God Mode Suno prompt pack series. 310+ engineered assets across cinematic, hip-hop, and EDM.",
+                  "url": "https://cloverbryan.gumroad.com/l/suno-god-mode-3-pack",
+                  "image": "https://www.cleverclover.studio/images/og-image.PNG",
+                  "brand": { "@type": "Brand", "name": "Clever Clover Studio" },
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "15.00",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://cloverbryan.gumroad.com/l/suno-god-mode-3-pack"
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "position": 6,
+                  "name": "The Suno God Mode Collection — Guide + All Volumes",
+                  "description": "The complete Clever Clover Suno system. The God Mode Bible plus all current and future volumes of the prompt pack series.",
+                  "url": "https://cloverbryan.gumroad.com/l/god-mode-collection",
+                  "image": "https://www.cleverclover.studio/images/og-image.PNG",
+                  "brand": { "@type": "Brand", "name": "Clever Clover Studio" },
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "49.00",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://cloverbryan.gumroad.com/l/god-mode-collection"
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "Organization",
+              "name": "Clever Clover Studio",
+              "url": "https://www.cleverclover.studio",
+              "logo": "https://www.cleverclover.studio/images/og-image.PNG",
+              "founder": { "@type": "Person", "name": "CLOVER" },
+              "description": "Creative production studio specializing in AI-assisted music production, video, audio, web design, and digital products. Producer of 9,000+ Suno tracks across four artist identities."
+            }
+          ]
+        })}
+      </Script>
     </>
   );
 }
