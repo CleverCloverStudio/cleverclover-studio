@@ -1085,3 +1085,57 @@ export const tools = [
   { name: "Suno AI Music", category: "Production" },
   { name: "Adobe Creative Suite", category: "Design" },
 ];
+
+// ─── Blog product map ─────────────────────────────────────────────────────────
+
+export interface BlogProduct {
+  name: string;
+  price: string;
+  pitch: string;
+  url: string;
+}
+
+export const blogProductMap: Record<string, BlogProduct> = {
+  "god-mode-guide": {
+    name: "The God-Mode Guide",
+    price: "$39",
+    pitch:
+      "The complete methodology for producing radio-ready tracks on Suno — refined over 8,000+ songs.",
+    url: "https://cloverbryan.gumroad.com/l/usyno",
+  },
+  "cinematic-vol-01": {
+    name: "Cinematic / Trailer / Score Vol. 01",
+    price: "$7",
+    pitch:
+      "80+ engineered assets across 8 scoring systems — blockbuster trailers, dark thrillers, fantasy scores, and more.",
+    url: "https://cloverbryan.gumroad.com/l/cinematic-trailer-score-suno-prompts",
+  },
+  "hip-hop-vol-02": {
+    name: "Hip-Hop / Trap Vol. 02",
+    price: "$7",
+    pitch:
+      "100+ engineered assets for the genre Suno gets wrong most — Atlanta Trap, Boom-Bap, Drill, Phonk, and more.",
+    url: "https://cloverbryan.gumroad.com/l/hip-hop-suno-prompts",
+  },
+  "edm-vol-03": {
+    name: "Electronic / EDM Vol. 03",
+    price: "$7",
+    pitch:
+      "130+ engineered assets for Afro House, 3-Step, Melodic Techno, Speed Garage, Hard Techno, and more.",
+    url: "https://cloverbryan.gumroad.com/l/edm-suno-prompts",
+  },
+  "bundle-3pack": {
+    name: "3-Pack Bundle",
+    price: "$15",
+    pitch:
+      "310+ engineered assets across Cinematic, Hip-Hop, and EDM — plus bundle-exclusive bonus prompts.",
+    url: "https://cloverbryan.gumroad.com/l/suno-god-mode-3-pack",
+  },
+  collection: {
+    name: "The God-Mode Collection",
+    price: "$49",
+    pitch:
+      "Every product. Every prompt. The complete God-Mode system — Guide plus all volumes, new additions automatic.",
+    url: "https://cloverbryan.gumroad.com/l/god-mode-collection",
+  },
+};

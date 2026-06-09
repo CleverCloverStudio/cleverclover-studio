@@ -15,6 +15,7 @@ const services = [
 const navLinks = [
   { href: "/packages", label: "Packages" },
   { href: "/products", label: "Products" },
+  { href: "/blog", label: "Blog" },
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
 ];

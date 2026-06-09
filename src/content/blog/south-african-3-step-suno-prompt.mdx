@@ -5,6 +5,7 @@ slug: "south-african-3-step-suno-prompt"
 date: "2026-06-08"
 author: "CLOVER"
 category: "Electronic / EDM"
+relatedProduct: "edm-vol-03"
 keywords:
   - south african 3-step suno
   - 3-step suno prompt
@@ -51,8 +52,7 @@ Three moves do almost all the work.
 
 Drop this in Suno's **Style** field:
 
-```
-South African 3-step, Afro house, 115 BPM, A minor. Three-kick drum
+<PromptBlock prompt={`South African 3-step, Afro house, 115 BPM, A minor. Three-kick drum
 pattern: kicks land on beats 1, 2, and 4 only — beat 3 is intentionally
 empty, the missing kick is the hook. Deep resonant log drum bass walking
 a syncopated minor-pentatonic pattern in the low end. Jazzy Rhodes chords
@@ -62,18 +62,15 @@ breathy wordless vocal chants and ad-libs. Spacious, hypnotic, unhurried,
 percussion-led groove built on tension and release, room to breathe
 between hits. STRUCTURE: percussion-only intro → log drum entry → full
 groove with vocal chants → stripped breakdown holding the empty space →
-return.
-```
+return.`} />
 
 And this goes in Suno's **Exclude** field — affirmative descriptors only, never "no" or "don't":
 
-```
-four-on-the-floor kick on every beat, straight house pulse, generic
+<ExcludeBlock prompt={`four-on-the-floor kick on every beat, straight house pulse, generic
 synth bass, smooth clean sub bass, cluttered percussion wall,
 tightly quantized grid, EDM festival drop, big-room synths, aggressive
 sidechain pumping, bright major-key pop, trap hi-hats, fast tempo,
-overcompressed master
-```
+overcompressed master`} />
 
 Generate three or four versions. The exclude field is doing as much work as the style field here — it's what stops Suno from defaulting the kick back onto every beat and over-polishing the percussion. If the groove still feels too full, push the BPM down to 113 and add "deliberate emptiness, sparse arrangement" to the front of the style box.
 
@@ -85,8 +82,6 @@ Most prompt packs would hand you a string like the one above and call it done. T
 
 That's the whole idea behind how I work: the prompt gives you the song, the system gives you the genre.
 
-## Go deeper
-
-The fully X-rayed version of this prompt — key, mode, motif design, exact swing percentage, the full structure with bar counts, and the complete exclusion logic — is Prompt 02 inside the **[Electronic & EDM God Mode Pack (Vol. 03)](https://cloverbryan.gumroad.com/l/edm-suno-prompts)**, alongside seven more engineered electronic prompts spanning spiritual Afro house, melodic techno fusion, and the rest of the genres Suno gets wrong. It's $7, and South African 3-step is the prompt I built the pack around — if you can generate a clean 3-step track, you understand the whole method.
+<ProductCTA />
 
 *— CLOVER · Clever Clover Studio · 9,000+ Suno songs deep*

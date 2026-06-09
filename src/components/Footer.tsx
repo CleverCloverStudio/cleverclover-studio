@@ -12,6 +12,7 @@ const services = [
 
 const studio = [
   { href: "/work", label: "Our Work" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/book", label: "Book a Project" },
 ];
