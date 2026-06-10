@@ -61,6 +61,12 @@ export default async function BlogPostPage({
 
   const { meta, content } = post;
 
+  const BoundPromptBlock = () => (
+    <PromptBlock prompt={meta.prompts?.style ?? ""} />
+  );
+  const BoundExcludeBlock = () => (
+    <ExcludeBlock prompt={meta.prompts?.exclude ?? ""} />
+  );
   const BoundProductCTA = () => (
     <ProductCTA productKey={meta.relatedProduct} />
   );
@@ -68,8 +74,8 @@ export default async function BlogPostPage({
   const { content: rendered } = await compileMDX({
     source: content,
     components: {
-      PromptBlock,
-      ExcludeBlock,
+      PromptBlock: BoundPromptBlock,
+      ExcludeBlock: BoundExcludeBlock,
       ProductCTA: BoundProductCTA,
     },
   });

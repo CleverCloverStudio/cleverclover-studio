@@ -15,6 +15,10 @@ export interface PostMeta {
   keywords: string[];
   ogImage?: string;
   draft?: boolean;
+  prompts?: {
+    style?: string;
+    exclude?: string;
+  };
 }
 
 export function getAllPosts(): PostMeta[] {

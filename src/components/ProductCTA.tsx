@@ -25,7 +25,8 @@ export default function ProductCTA({ productKey }: ProductCTAProps) {
           href={product.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-dark transition-colors hover:bg-gold-light"
+          className="rounded-full bg-gold px-6 py-2.5 text-sm font-semibold transition-colors hover:bg-gold-light"
+          style={{ color: "#0A0A0A", textDecoration: "none" }}
         >
           Get it on Gumroad — {product.price}
         </a>

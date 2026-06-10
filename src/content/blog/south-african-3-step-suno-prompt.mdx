@@ -14,6 +14,25 @@ keywords:
   - suno log drum
   - 3-step afro house
 ogImage: "/images/blog/3-step-suno-og.png"
+prompts:
+  style: |-
+    South African 3-step, Afro house, 115 BPM, A minor. Three-kick drum
+    pattern: kicks land on beats 1, 2, and 4 only — beat 3 is intentionally
+    empty, the missing kick is the hook. Deep resonant log drum bass walking
+    a syncopated minor-pentatonic pattern in the low end. Jazzy Rhodes chords
+    with major-7th color, shuffling shakers placed slightly late for swing,
+    marching handclaps, woodblock polyrhythms, soft highlife horn stabs,
+    breathy wordless vocal chants and ad-libs. Spacious, hypnotic, unhurried,
+    percussion-led groove built on tension and release, room to breathe
+    between hits. STRUCTURE: percussion-only intro → log drum entry → full
+    groove with vocal chants → stripped breakdown holding the empty space →
+    return.
+  exclude: |-
+    four-on-the-floor kick on every beat, straight house pulse, generic
+    synth bass, smooth clean sub bass, cluttered percussion wall,
+    tightly quantized grid, EDM festival drop, big-room synths, aggressive
+    sidechain pumping, bright major-key pop, trap hi-hats, fast tempo,
+    overcompressed master
 ---
 
 Most people hear 3-step and try to describe what they're hearing. They get it backwards. The genre isn't defined by a sound it adds — it's defined by a sound it **takes away**.
@@ -52,25 +71,11 @@ Three moves do almost all the work.
 
 Drop this in Suno's **Style** field:
 
-<PromptBlock prompt={`South African 3-step, Afro house, 115 BPM, A minor. Three-kick drum
-pattern: kicks land on beats 1, 2, and 4 only — beat 3 is intentionally
-empty, the missing kick is the hook. Deep resonant log drum bass walking
-a syncopated minor-pentatonic pattern in the low end. Jazzy Rhodes chords
-with major-7th color, shuffling shakers placed slightly late for swing,
-marching handclaps, woodblock polyrhythms, soft highlife horn stabs,
-breathy wordless vocal chants and ad-libs. Spacious, hypnotic, unhurried,
-percussion-led groove built on tension and release, room to breathe
-between hits. STRUCTURE: percussion-only intro → log drum entry → full
-groove with vocal chants → stripped breakdown holding the empty space →
-return.`} />
+<PromptBlock />
 
 And this goes in Suno's **Exclude** field — affirmative descriptors only, never "no" or "don't":
 
-<ExcludeBlock prompt={`four-on-the-floor kick on every beat, straight house pulse, generic
-synth bass, smooth clean sub bass, cluttered percussion wall,
-tightly quantized grid, EDM festival drop, big-room synths, aggressive
-sidechain pumping, bright major-key pop, trap hi-hats, fast tempo,
-overcompressed master`} />
+<ExcludeBlock />
 
 Generate three or four versions. The exclude field is doing as much work as the style field here — it's what stops Suno from defaulting the kick back onto every beat and over-polishing the percussion. If the groove still feels too full, push the BPM down to 113 and add "deliberate emptiness, sparse arrangement" to the front of the style box.
 
