@@ -537,18 +537,18 @@ export const workProjects: WorkProject[] = [
     deliverables: ["Original song (written + produced)", "Comic-book motion video", "Color grading", "YouTube + streaming release"],
   },
   {
-    id: 2,
-    title: "What I Bring to the Table — A Spoken Word Business Card",
+    id: 10,
+    title: "The Resume That Sings — A Career Told as a Music Video",
     client: "CLOVER",
     category: "Video",
-    tags: ["Video", "Music", "Branding"],
+    tags: ["Music", "Video", "AI", "Storytelling"],
     description:
-      "A spoken word rap transformed into a cinematic lyric video — turning a business pitch into a creative brand piece. Concept, writing, music production, animation, and editing all done in-house.",
-    youtubeId: "PmNJKyAREXk",
-    externalUrl: "https://www.youtube.com/watch?v=PmNJKyAREXk",
-    challenge: "Turn a personal brand pitch into something visually compelling and shareable — not a slide deck, but a creative statement.",
-    solution: "Wrote and produced an original spoken word rap, then built a cinematic animated lyric video that serves as both a portfolio piece and a living business card.",
-    deliverables: ["Original spoken word track", "Cinematic lyric video", "Brand identity integration", "YouTube release"],
+      "What if a resume wasn't a PDF — it was a music video? An original song tracing every job, every skill, every chapter, with real archival photos brought to life through AI animation. Songwriting, music production, photo restoration, motion design, and editing — every skill in the lyrics is proven on screen.",
+    youtubeId: "SCKhR6VbUJ8",
+    externalUrl: "https://www.youtube.com/watch?v=SCKhR6VbUJ8",
+    challenge: "Turn a career into something you'd actually want to watch — not a PDF, but a music video where every claim in the song is proven on screen.",
+    solution: "Wrote and produced an original song with every job and skill woven into the lyrics, then animated real archival photos using AI to build a music video that proves every word.",
+    deliverables: ["Original song (written + produced)", "AI-animated photo music video", "Photo restoration", "Motion design", "YouTube release"],
   },
   {
     id: 3,
@@ -605,6 +605,20 @@ export const workProjects: WorkProject[] = [
     challenge: "Create a fully produced narrative fiction podcast — with multiple voice characters, original music, and layered sound design — entirely solo, with no cast or production team.",
     solution: "Wrote all scripts, performed every character voice, composed original music and sound design, and produced all 6 episodes in-house. Built a signature format: science fiction told with the tension and structure of true crime.",
     deliverables: ["6 original episodes written + produced", "Multiple character voice performances", "Original music per episode", "Full sound design", "Distributed on Spotify"],
+  },
+  {
+    id: 2,
+    title: "What I Bring to the Table — A Spoken Word Business Card",
+    client: "CLOVER",
+    category: "Video",
+    tags: ["Video", "Music", "Branding"],
+    description:
+      "A spoken word rap transformed into a cinematic lyric video — turning a business pitch into a creative brand piece. Concept, writing, music production, animation, and editing all done in-house.",
+    youtubeId: "PmNJKyAREXk",
+    externalUrl: "https://www.youtube.com/watch?v=PmNJKyAREXk",
+    challenge: "Turn a personal brand pitch into something visually compelling and shareable — not a slide deck, but a creative statement.",
+    solution: "Wrote and produced an original spoken word rap, then built a cinematic animated lyric video that serves as both a portfolio piece and a living business card.",
+    deliverables: ["Original spoken word track", "Cinematic lyric video", "Brand identity integration", "YouTube release"],
   },
   {
     id: 9,
@@ -695,7 +709,7 @@ export const workProjects: WorkProject[] = [
 ];
 
 // Featured work on homepage — derived from the first 3 workProjects
-export const featuredWork = workProjects.filter((p) => [1, 2, 3].includes(p.id));
+export const featuredWork = workProjects.filter((p) => [1, 10, 3].includes(p.id));
 
 // Video page portfolio samples
 export const videoSamples = workProjects.filter((p) => [11, 12, 13].includes(p.id));
