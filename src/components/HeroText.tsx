@@ -120,7 +120,7 @@ function ShowreelPanel() {
         /* ── YouTube embed (autoplay on click) ── */
         <iframe
           className="absolute inset-0 h-full w-full"
-          src="https://www.youtube.com/embed/guW5thVfskg?autoplay=1&rel=0&modestbranding=1&color=white"
+          src="https://www.youtube.com/embed/IYJrKcR_AlA?autoplay=1&rel=0&modestbranding=1&color=white"
           title="Clever Clover Studio Showreel"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -134,7 +134,7 @@ function ShowreelPanel() {
         >
           {/* Thumbnail */}
           <Image
-            src="/images/showreel-thumbnail.png"
+            src="/images/showreel-thumbnail.webp"
             alt="Clever Clover Studio showreel thumbnail"
             fill
             className="object-cover"
