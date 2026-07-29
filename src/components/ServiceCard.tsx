@@ -97,14 +97,22 @@ function ServiceIcon({ id }: { id: string }) {
       </svg>
     );
   }
-  // web
+  if (id === "web") {
+    return (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="18" rx="2" />
+        <path d="M2 8h20" />
+        <circle cx="6" cy="5.5" r="0.8" fill="currentColor" stroke="none" />
+        <circle cx="9" cy="5.5" r="0.8" fill="currentColor" stroke="none" />
+        <circle cx="12" cy="5.5" r="0.8" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+  // ai-systems
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="3" width="20" height="18" rx="2" />
-      <path d="M2 8h20" />
-      <circle cx="6" cy="5.5" r="0.8" fill="currentColor" stroke="none" />
-      <circle cx="9" cy="5.5" r="0.8" fill="currentColor" stroke="none" />
-      <circle cx="12" cy="5.5" r="0.8" fill="currentColor" stroke="none" />
+      <rect x="7" y="7" width="10" height="10" rx="1.5" />
+      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2" />
     </svg>
   );
 }

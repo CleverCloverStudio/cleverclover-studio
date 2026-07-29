@@ -41,6 +41,13 @@ export const services = [
     href: "/products",
     startingAt: "Prompt packs from $19",
   },
+  {
+    id: "ai-systems",
+    title: "AI Development Systems",
+    description:
+      "Real, production websites built with a documented system that keeps them maintainable, recoverable, and easy to hand off — not scattered across chats and one person's memory.",
+    href: "/book",
+  },
 ];
 
 export const proofItems = [

@@ -52,7 +52,7 @@ export default function Home() {
             </p>
           </AnimatedReveal>
 
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
             {services.map((service, i) => (
               <AnimatedReveal key={service.id} delay={i * 0.08}>
                 <ServiceCard {...service} index={i} />
