@@ -458,6 +458,22 @@ export const packages: Package[] = [
     href: "/book",
     ctaText: "Book this package",
   },
+  {
+    id: "ai-development-systems",
+    tier: "popular",
+    title: "AI Development Systems",
+    description:
+      "A real, production website built with a documented system that keeps it maintainable, recoverable, and easy to hand off — not scattered across chats and one person's memory.",
+    includes: [
+      "Custom Next.js build",
+      "Living Project Bible + CLAUDE.md",
+      "Version control + backups",
+      "Non-technical handoff guide",
+    ],
+    price: "$750",
+    href: "/book",
+    ctaText: "Book this package",
+  },
   // ── Premium ───────────────────────────────────────────────────────────────
   {
     id: "full-brand",
