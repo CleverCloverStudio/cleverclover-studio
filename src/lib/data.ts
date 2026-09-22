@@ -546,18 +546,18 @@ export interface WorkProject {
 
 export const workProjects: WorkProject[] = [
   {
-    id: 1,
-    title: "Better Than Yours — Comic-Book Pop Motion Video",
+    id: 14,
+    title: "STAR-FALL HEART — An Emo Pop Story Told in the Stars",
     client: "CLOVER",
     category: "Video",
-    tags: ["Music", "Video", "Motion Graphics"],
+    tags: ["Music", "Video", "Storytelling"],
     description:
-      "Original pop punk track — written, produced, and brought to life as a comic-book style motion video. Songwriting, music production, and video creation delivered as a complete package by one person.",
-    youtubeId: "dSg7tiVy89Q",
-    externalUrl: "https://www.youtube.com/watch?v=dSg7tiVy89Q",
-    challenge: "Produce a complete song-to-screen release — original track plus full motion video — entirely solo, on a tight timeline.",
-    solution: "Wrote, recorded, and produced the song in-house, then built a comic-book style motion video in DaVinci Resolve with custom graphics and frame-by-frame animation.",
-    deliverables: ["Original song (written + produced)", "Comic-book motion video", "Color grading", "YouTube + streaming release"],
+      "An intimate alternative-pop song written, produced, and performed in CLOVER's own voice — a life told through a telescope. A six-year-old stargazer at the edge of a cul-de-sac becomes the artist traveling back through liminal space to revisit every memory along the way. Vulnerable spoken-sung storytelling, live-action performance, and dreamlike visuals in one deeply personal piece.",
+    youtubeId: "dlyl_UU6aCs",
+    externalUrl: "https://www.youtube.com/watch?v=dlyl_UU6aCs",
+    challenge: "Tell an entire personal history — from childhood stargazing to the present — in a single song and video without slipping into generic nostalgia.",
+    solution: "Wrote, produced, and performed an intimate alternative-pop track in CLOVER's own voice, then built a live-action video blending vulnerable spoken-sung performance with dreamlike, telescope-framed visuals to carry the story across time.",
+    deliverables: ["Original song (written, produced, and performed)", "Live-action music video", "Dreamlike visual effects", "YouTube release"],
   },
   {
     id: 10,
@@ -628,6 +628,20 @@ export const workProjects: WorkProject[] = [
     challenge: "Create a fully produced narrative fiction podcast — with multiple voice characters, original music, and layered sound design — entirely solo, with no cast or production team.",
     solution: "Wrote all scripts, performed every character voice, composed original music and sound design, and produced all 6 episodes in-house. Built a signature format: science fiction told with the tension and structure of true crime.",
     deliverables: ["6 original episodes written + produced", "Multiple character voice performances", "Original music per episode", "Full sound design", "Distributed on Spotify"],
+  },
+  {
+    id: 1,
+    title: "Better Than Yours — Comic-Book Pop Motion Video",
+    client: "CLOVER",
+    category: "Video",
+    tags: ["Music", "Video", "Motion Graphics"],
+    description:
+      "Original pop punk track — written, produced, and brought to life as a comic-book style motion video. Songwriting, music production, and video creation delivered as a complete package by one person.",
+    youtubeId: "dSg7tiVy89Q",
+    externalUrl: "https://www.youtube.com/watch?v=dSg7tiVy89Q",
+    challenge: "Produce a complete song-to-screen release — original track plus full motion video — entirely solo, on a tight timeline.",
+    solution: "Wrote, recorded, and produced the song in-house, then built a comic-book style motion video in DaVinci Resolve with custom graphics and frame-by-frame animation.",
+    deliverables: ["Original song (written + produced)", "Comic-book motion video", "Color grading", "YouTube + streaming release"],
   },
   {
     id: 2,
@@ -732,7 +746,7 @@ export const workProjects: WorkProject[] = [
 ];
 
 // Featured work on homepage — derived from the first 3 workProjects
-export const featuredWork = workProjects.filter((p) => [1, 10, 3].includes(p.id));
+export const featuredWork = workProjects.filter((p) => [14, 10, 3].includes(p.id));
 
 // Video page portfolio samples
 export const videoSamples = workProjects.filter((p) => [11, 12, 13].includes(p.id));
