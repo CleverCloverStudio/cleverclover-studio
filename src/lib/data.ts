@@ -560,6 +560,20 @@ export const workProjects: WorkProject[] = [
     deliverables: ["Original song (written, produced, and performed)", "Live-action music video", "Dreamlike visual effects", "YouTube release"],
   },
   {
+    id: 15,
+    title: "Built to Be Maintained — Inside a Production Site Workflow",
+    client: "Clever Clover Studio",
+    category: "Web",
+    tags: ["Web", "Video", "AI"],
+    description:
+      "Most vibe-coded websites are easy to build and hard to maintain. This walkthrough shows the system behind CleverClover.studio, a production Next.js site live on Vercel and connected to GitHub. A living project bible and CLAUDE.md file define the site's purpose, structure, and design rules before Claude Code changes anything. Every change is reviewed, committed, and deployed, and a backup and recovery plan protects the work. It's a project with a memory and a clean handoff, organized so the next person can keep building, technical or not.",
+    youtubeId: "4sy8Scrtgg4",
+    externalUrl: "https://www.youtube.com/watch?v=4sy8Scrtgg4",
+    challenge: "Most vibe-coded websites are fast to build but nearly impossible to hand off or maintain safely once the initial build is done.",
+    solution: "Documented the exact system behind CleverClover.studio — a living project bible and CLAUDE.md file that define the site's purpose, structure, and design rules before any AI-assisted change is made, paired with a review-commit-deploy workflow and a backup and recovery plan.",
+    deliverables: ["Behind-the-scenes workflow walkthrough", "Living project bible + CLAUDE.md documentation", "Reviewed, committed, and deployed changes", "Backup & recovery plan", "YouTube release"],
+  },
+  {
     id: 10,
     title: "The Resume That Sings — A Career Told as a Music Video",
     client: "CLOVER",

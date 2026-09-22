@@ -5,6 +5,14 @@ worth remembering. Keep it short — what changed and why, not every commit.
 
 ---
 
+## September 2026
+
+- **9/22/2026 — Added "Built to Be Maintained" workflow video to Work page
+  slot 2.** New `workProjects` entry in `src/lib/data.ts` (id 15) covering the
+  project's Claude Code / CLAUDE.md workflow, tagged Web + Video + AI so it
+  surfaces under both filters. Reordered "The Resume That Sings" and "NBA
+  Finals — Hiring Creatives" down one slot each; no other entries changed.
+
 ## July 2026
 
 - **7/29/2026 — Consolidated project documentation and added "AI Development
